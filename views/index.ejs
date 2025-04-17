@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Tater - Profile Q&A</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .profile-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 0 1px rgba(0,0,0,.15);
+            margin-bottom: 24px;
+            padding: 32px;
+        }
+
+        .profile-info {
+            padding: 0;
+        }
+
+        .profile-name {
+            font-size: 26px;
+            font-weight: 600;
+            color: rgba(0,0,0,.9);
+            margin-bottom: 8px;
+        }
+
+        .profile-headline {
+            font-size: 16px;
+            color: rgba(0,0,0,.9);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .profile-location {
+            font-size: 14px;
+            color: rgba(0,0,0,.6);
+            margin-bottom: 16px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            color: #0a66c2;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-item:hover {
+            text-decoration: underline;
+            color: #0a66c2;
+        }
+
+        .about-section {
+            margin-top: 24px;
+            border-top: 1px solid rgba(0,0,0,.15);
+            padding-top: 24px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgba(0,0,0,.9);
+            margin-bottom: 16px;
+        }
+
+        .loader {
+            display: none;
+            margin: 20px auto;
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 5px solid #3498db;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .answer-content {
+            white-space: pre-line;
+            line-height: 1.6;
+        }
+
+        #answer p {
+            margin-bottom: 1rem;
+        }
+
+        #answer ul, #answer ol {
+            margin-left: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .qa-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 0 1px rgba(0,0,0,.15);
+            padding: 24px;
+        }
+
+        body {
+            background-color: #f3f2ef;
+        }
+
+        .about-section ul {
+            padding-left: 20px;
+            margin-top: 16px;
+        }
+
+        .about-section li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- Profile Section -->
+                <div class="profile-section">
+                    <div class="profile-info">
+                        <h1 class="profile-name">Ankit Tater</h1>
+                        <div class="profile-headline">Engineering Management Professional | AI/ML | Cloud Architecture | Team Leadership</div>
+                        <div class="profile-location">
+                            <i class="fas fa-map-marker-alt"></i> London, United Kingdom
+                        </div>
+                        <div class="contact-info">
+                            <a href="mailto:ankittater91@gmail.com" class="contact-item">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                            <a href="https://linkedin.com/in/ankittater" target="_blank" class="contact-item">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                        <div class="about-section">
+                            <h2 class="section-title">About</h2>
+                            <p>Results-driven Engineering Manager with 12+ years of experience building and leading high-performance teams and delivering scalable, regulatory-compliant, cloud-native solutions. Expertise in:</p>
+                            <ul>
+                                <li>Architecture designed for scalability</li>
+                                <li>Generative AI (LLMs, Prompt Engineering, RAG pipelines)</li>
+                                <li>AI/ML Lifecycle (MLOps, Model Monitoring, SageMaker, TensorFlow)</li>
+                                <li>Cloud-Native Development (AWS, Azure, Kubernetes, Terraform)</li>
+                                <li>Team Leadership</li>
+                                <li>Regulatory Compliance (SaMD, GDPR, PCI-DSS)</li>
+                                <li>High-Performance Team Scaling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q&A Section -->
+                <div class="qa-section">
+                    <h2 class="text-center mb-4">Ask anything about my profile</h2>
+                    <div class="mb-4">
+                        <label for="question" class="form-label">Ask a question about my profile:</label>
+                        <textarea class="form-control" id="question" rows="3" placeholder="e.g., What are your skills? What is your work experience?"></textarea>
+                    </div>
+                    <button onclick="askQuestion()" class="btn btn-primary" id="ask-button">Ask</button>
+                    
+                    <div class="loader" id="loader"></div>
+
+                    <div class="mt-4" id="answer-section" style="display: none;">
+                        <h5>Answer:</h5>
+                        <div id="answer" class="p-3 bg-light rounded answer-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function askQuestion() {
+            const question = document.getElementById('question').value;
+            if (!question) return;
+
+            // Show loader and disable button
+            const loader = document.getElementById('loader');
+            const askButton = document.getElementById('ask-button');
+            const answerSection = document.getElementById('answer-section');
+            const answerElement = document.getElementById('answer');
+
+            loader.style.display = 'block';
+            askButton.disabled = true;
+            answerSection.style.display = 'none';
+
+            try {
+                const response = await fetch('/ask', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question })
+                });
+
+                const data = await response.json();
+                
+                // Format and display the answer
+                answerSection.style.display = 'block';
+                answerElement.innerHTML = formatAnswer(data.answer);
+
+                // Hide loader and enable button
+                loader.style.display = 'none';
+                askButton.disabled = false;
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while processing your question.');
+                loader.style.display = 'none';
+                askButton.disabled = false;
+            }
+        }
+
+        function formatAnswer(answer) {
+            // Convert line breaks to paragraphs and handle basic formatting
+            return answer
+                .split('\n\n')
+                .map(paragraph => {
+                    if (paragraph.trim().startsWith('•')) {
+                        // Convert bullet points to unordered list
+                        const items = paragraph.split('•').filter(item => item.trim());
+                        return `<ul>${items.map(item => `<li>${item.trim()}</li>`).join('')}</ul>`;
+                    }
+                    return `<p>${paragraph}</p>`;
+                })
+                .join('');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
