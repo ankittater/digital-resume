@@ -1,4 +1,4 @@
-FROM node:18-slim
+FROM node:22.14.0-slim
 
 WORKDIR /app
 
@@ -11,8 +11,11 @@ RUN npm install
 # Copy application code
 COPY . .
 
-# Expose port
-EXPOSE 3000
+# Debug: List files to verify contents
+RUN ls -la
 
-# Start the application
-CMD ["npm", "start"] 
+# Expose port
+EXPOSE 9000
+
+# Start the application with explicit path to ensure it's found
+CMD ["node", "./app.js"] 

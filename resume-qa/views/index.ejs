@@ -1,243 +1,1143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankit Tater - Profile Q&A</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <style>
-        .profile-section {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 0 1px rgba(0,0,0,.15);
-            margin-bottom: 24px;
-            padding: 32px;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        .profile-info {
-            padding: 0;
-        }
+    <!-- Primary Meta Tags -->
+    <title>
+      Ankit Tater - Engineering Management Professional | AI/ML Expert
+    </title>
+    <meta
+      name="title"
+      content="Ankit Tater - Engineering Management Professional | AI/ML Expert"
+    />
+    <meta
+      name="description"
+      content="Strategic Engineering Leader with 12+ years of experience in Healthtech, Fintech, and E-commerce. Expert in AI/ML, Cloud Architecture, and Team Leadership."
+    />
+    <meta
+      name="keywords"
+      content="Engineering Manager, CTO, AI/ML, Cloud Architecture, Team Leadership, Healthtech, Fintech, Java, Python, JavaScript, TypeScript, Node.js, AWS, Azure"
+    />
+    <meta name="author" content="Ankit Tater" />
+    <meta name="robots" content="index, follow" />
 
-        .profile-name {
-            font-size: 26px;
-            font-weight: 600;
-            color: rgba(0,0,0,.9);
-            margin-bottom: 8px;
-        }
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ankittater.com/" />
+    <meta
+      property="og:title"
+      content="Ankit Tater - Engineering Management Professional | AI/ML Expert"
+    />
+    <meta
+      property="og:description"
+      content="Strategic Engineering Leader with 12+ years of experience in Healthtech, Fintech, and E-commerce. Expert in AI/ML, Cloud Architecture, and Team Leadership."
+    />
+    <meta
+      property="og:image"
+      content="https://example.com/images/ankit-tater-profile.jpg"
+    />
 
-        .profile-headline {
-            font-size: 16px;
-            color: rgba(0,0,0,.9);
-            margin-bottom: 16px;
-            line-height: 1.4;
-        }
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ankittater.com/" />
+    <meta
+      property="twitter:title"
+      content="Ankit Tater - Engineering Management Professional | AI/ML Expert"
+    />
+    <meta
+      property="twitter:description"
+      content="Strategic Engineering Leader with 12+ years of experience in Healthtech, Fintech, and E-commerce. Expert in AI/ML, Cloud Architecture, and Team Leadership."
+    />
+    <meta
+      property="twitter:image"
+      content="https://example.com/images/ankit-tater-profile.jpg"
+    />
 
-        .profile-location {
-            font-size: 14px;
-            color: rgba(0,0,0,.6);
-            margin-bottom: 16px;
-        }
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ankittater.com/" />
 
-        .contact-info {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
 
-        .contact-item {
-            color: #0a66c2;
-            text-decoration: none;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+    <!-- CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
 
-        .contact-item:hover {
-            text-decoration: underline;
-            color: #0a66c2;
-        }
-
-        .about-section {
-            margin-top: 24px;
-            border-top: 1px solid rgba(0,0,0,.15);
-            padding-top: 24px;
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: rgba(0,0,0,.9);
-            margin-bottom: 16px;
-        }
-
-        .loader {
-            display: none;
-            margin: 20px auto;
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 5px solid #3498db;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .answer-content {
-            white-space: pre-line;
-            line-height: 1.6;
-        }
-
-        #answer p {
-            margin-bottom: 1rem;
-        }
-
-        #answer ul, #answer ol {
-            margin-left: 20px;
-            margin-bottom: 1rem;
-        }
-
-        .qa-section {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 0 1px rgba(0,0,0,.15);
-            padding: 24px;
-        }
-
-        body {
-            background-color: #f3f2ef;
-        }
-
-        .about-section ul {
-            padding-left: 20px;
-            margin-top: 16px;
-        }
-
-        .about-section li {
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-    </style>
-</head>
-<body>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <!-- Profile Section -->
-                <div class="profile-section">
-                    <div class="profile-info">
-                        <h1 class="profile-name">Ankit Tater</h1>
-                        <div class="profile-headline">Engineering Management Professional | AI/ML | Cloud Architecture | Team Leadership</div>
-                        <div class="profile-location">
-                            <i class="fas fa-map-marker-alt"></i> London, United Kingdom
-                        </div>
-                        <div class="contact-info">
-                            <a href="mailto:ankittater91@gmail.com" class="contact-item">
-                                <i class="fas fa-envelope"></i> Email
-                            </a>
-                            <a href="https://linkedin.com/in/ankittater" target="_blank" class="contact-item">
-                                <i class="fab fa-linkedin"></i> LinkedIn
-                            </a>
-                        </div>
-                        <div class="about-section">
-                            <h2 class="section-title">About</h2>
-                            <p>Results-driven Engineering Manager with 12+ years of experience building and leading high-performance teams and delivering scalable, regulatory-compliant, cloud-native solutions. Expertise in:</p>
-                            <ul>
-                                <li>Architecture designed for scalability</li>
-                                <li>Generative AI (LLMs, Prompt Engineering, RAG pipelines)</li>
-                                <li>AI/ML Lifecycle (MLOps, Model Monitoring, SageMaker, TensorFlow)</li>
-                                <li>Cloud-Native Development (AWS, Azure, Kubernetes, Terraform)</li>
-                                <li>Team Leadership</li>
-                                <li>Regulatory Compliance (SaMD, GDPR, PCI-DSS)</li>
-                                <li>High-Performance Team Scaling</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Q&A Section -->
-                <div class="qa-section">
-                    <h2 class="text-center mb-4">Ask anything about my profile</h2>
-                    <div class="mb-4">
-                        <label for="question" class="form-label">Ask a question about my profile:</label>
-                        <textarea class="form-control" id="question" rows="3" placeholder="e.g., What are your skills? What is your work experience?"></textarea>
-                    </div>
-                    <button onclick="askQuestion()" class="btn btn-primary" id="ask-button">Ask</button>
-                    
-                    <div class="loader" id="loader"></div>
-
-                    <div class="mt-4" id="answer-section" style="display: none;">
-                        <h5>Answer:</h5>
-                        <div id="answer" class="p-3 bg-light rounded answer-content"></div>
-                    </div>
-                </div>
-            </div>
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ankit Tater",
+        "url": "https://ankittater.com",
+        "image": "https://example.com/images/ankit-tater-profile.jpg",
+        "jobTitle": "Engineering Management Professional",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Huma Therapeutics"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "United Kingdom"
+        },
+        "email": "hello@ankittater.com",
+        "sameAs": [
+          "https://github.com/ankittater",
+          "https://linkedin.com/in/ankittater"
+        ],
+        "description": "Strategic Engineering Leader with 12+ years of experience building and scaling high-performance teams and delivering enterprise-grade solutions.",
+        "knowsAbout": [
+          "AI/ML",
+          "Cloud Architecture",
+          "Team Leadership",
+          "Microservices",
+          "Java",
+          "Python",
+          "JavaScript",
+          "TypeScript",
+          "Node.js",
+          "AWS",
+          "Azure"
+        ],
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "JNTU Hyderabad",
+            "location": "Hyderabad, India"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Great Learning",
+            "location": "India"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">ANKIT TATER</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#engineering-excellence"
+                >Engineering Excellence</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#certifications">Certifications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <h1 class="display-4 fw-bold mb-3">
+              Engineering Management Professional
+            </h1>
+            <p class="lead mb-4">
+              Building high-performance teams and delivering scalable solutions
+              in AI/ML, Cloud Architecture, and more.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="#contact" class="btn btn-primary px-4 py-2"
+                >Get in Touch</a
+              >
+              <a href="#about" class="btn btn-outline-dark px-4 py-2"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container my-5">
+      <!-- About Section -->
+      <section id="about" class="mb-5">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="profile-section">
+              <div class="row mb-4">
+                <div class="col-md-12">
+                  <h1 class="profile-name">Ankit Tater</h1>
+                  <div class="profile-headline">
+                    Engineering Manager – Healthtech | AI/ML | Cloud | SaMD |
+                    Global Scale
+                  </div>
+                  <div class="profile-location mb-3">
+                    <i class="fas fa-map-marker-alt"></i> London, United Kingdom
+                  </div>
+                  <div class="contact-info">
+                    <a href="mailto:hello@ankittater.com" class="contact-item">
+                      <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a
+                      href="https://linkedin.com/in/ankittater"
+                      target="_blank"
+                      class="contact-item"
+                    >
+                      <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a
+                      href="https://github.com/ankittater"
+                      target="_blank"
+                      class="contact-item"
+                    >
+                      <i class="fab fa-github"></i> GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="about-content">
+                    <h2 class="section-title">About Me</h2>
+                    <p>
+                      Strategic Engineering Leader with 12+ years of experience
+                      building and scaling high-performance teams and delivering
+                      enterprise-grade, cloud-native, and regulatory-compliant
+                      solutions across Healthtech, Fintech, and E-commerce.
+                    </p>
+                    <p>
+                      As CTO and co-founder of two tech ventures, I led product
+                      and engineering from the ground up—transforming ambitious
+                      ideas into scalable, market-ready solutions. I've
+                      consistently navigated the full product lifecycle, from
+                      architecture to execution, while building resilient,
+                      high-impact teams. My leadership philosophy is grounded in
+                      clarity, ownership, and collaboration, with a strong focus
+                      on cultivating engineering cultures that prioritize
+                      accountability, continuous improvement, and meaningful
+                      customer impact.
+                    </p>
+                    <h3 class="subsection-title">Areas of Expertise</h3>
+                    <div class="expertise-grid">
+                      <div class="expertise-item">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Architecture for Scalability</span>
+                      </div>
+                      <div class="expertise-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Generative AI & LLMs</span>
+                      </div>
+                      <div class="expertise-item">
+                        <i class="fas fa-brain"></i>
+                        <span>AI/ML Lifecycle & MLOps</span>
+                      </div>
+                      <div class="expertise-item">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloud-Native Development</span>
+                      </div>
+                      <div class="expertise-item">
+                        <i class="fas fa-users"></i>
+                        <span>Team Leadership</span>
+                      </div>
+                      <div class="expertise-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Regulatory Compliance</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q&A Section -->
+          <div class="col-md-4">
+            <div class="qa-section">
+              <h2 class="text-center mb-4">Ask anything about Me</h2>
+              <div class="mb-4">
+                <label for="question" class="form-label"
+                  >Ask a question about my skills, experience, projects,
+                  etc:</label
+                >
+                <textarea
+                  class="form-control"
+                  id="question"
+                  rows="3"
+                  placeholder="e.g., What are Ankit's skills? What is Ankit's experience?"
+                ></textarea>
+              </div>
+              <button
+                onclick="askQuestion()"
+                class="btn btn-primary"
+                id="ask-button"
+              >
+                Ask
+              </button>
+
+              <div class="loader" id="loader"></div>
+
+              <div class="mt-4" id="answer-section" style="display: none">
+                <h5>Answer:</h5>
+                <div
+                  id="answer"
+                  class="p-3 bg-light rounded answer-content"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Engineering Excellence Section -->
+      <section id="engineering-excellence" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4">Engineering Excellence</h2>
+
+          <div class="row mb-4">
+            <div class="col-md-12">
+              <div class="metrics-card">
+                <h3 class="metrics-title">Engineering Leadership Philosophy</h3>
+                <div class="philosophy-content">
+                  <p>
+                    My approach to engineering leadership is rooted in
+                    data-driven decision making, continuous improvement, and
+                    creating a culture of technical excellence:
+                  </p>
+
+                  <div class="philosophy-grid">
+                    <div class="philosophy-item">
+                      <div class="philosophy-icon">
+                        <i class="fas fa-compass"></i>
+                      </div>
+                      <div class="philosophy-text">
+                        <strong>Strategic Alignment</strong> - Aligning
+                        engineering efforts with business objectives through
+                        clear OKRs and transparent roadmaps
+                      </div>
+                    </div>
+
+                    <div class="philosophy-item">
+                      <div class="philosophy-icon">
+                        <i class="fas fa-chart-bar"></i>
+                      </div>
+                      <div class="philosophy-text">
+                        <strong>Metrics-Driven Culture</strong> - Establishing
+                        and tracking DORA metrics to continuously improve
+                        delivery performance
+                      </div>
+                    </div>
+
+                    <div class="philosophy-item">
+                      <div class="philosophy-icon">
+                        <i class="fas fa-users-cog"></i>
+                      </div>
+                      <div class="philosophy-text">
+                        <strong>Team Empowerment</strong> - Creating autonomous
+                        teams with clear ownership and decision-making authority
+                      </div>
+                    </div>
+
+                    <div class="philosophy-item">
+                      <div class="philosophy-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                      </div>
+                      <div class="philosophy-text">
+                        <strong>Learning Culture</strong> - Implementing
+                        blameless post-mortems, experimentation frameworks, and
+                        innovation time
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-lg-6 mb-4">
+              <div class="metrics-card">
+                <h3 class="metrics-title">DORA Metrics Achievements</h3>
+                <p class="mb-3">
+                  Driving high-performance engineering through measurable DevOps
+                  practices:
+                </p>
+
+                <div class="metrics-grid">
+                  <div class="metric-item">
+                    <div class="metric-name">Deployment Frequency</div>
+                    <div class="metric-value">Daily Deployments</div>
+                    <div class="metric-improvement">↑ 300% improvement</div>
+                  </div>
+
+                  <div class="metric-item">
+                    <div class="metric-name">Lead Time for Changes</div>
+                    <div class="metric-value">< 24 hours</div>
+                    <div class="metric-improvement">↓ 75% reduction</div>
+                  </div>
+
+                  <div class="metric-item">
+                    <div class="metric-name">Mean Time to Recover</div>
+                    <div class="metric-value">< 60 minutes</div>
+                    <div class="metric-improvement">↓ 80% reduction</div>
+                  </div>
+
+                  <div class="metric-item">
+                    <div class="metric-name">Change Failure Rate</div>
+                    <div class="metric-value">< 5%</div>
+                    <div class="metric-improvement">↓ 65% reduction</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+              <div class="metrics-card">
+                <h3 class="metrics-title">OKR Implementation Impact</h3>
+                <p class="mb-3">
+                  Strategic alignment through Objectives and Key Results
+                  framework:
+                </p>
+
+                <div class="okr-list">
+                  <div class="okr-item">
+                    <div class="okr-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="okr-content">
+                      <h4>Engineering Velocity</h4>
+                      <p>
+                        40% increase in feature delivery while maintaining
+                        quality metrics
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="okr-item">
+                    <div class="okr-icon">
+                      <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div class="okr-content">
+                      <h4>Technical Debt Reduction</h4>
+                      <p>
+                        35% reduction in critical technical debt measured
+                        through code quality metrics
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="okr-item">
+                    <div class="okr-icon">
+                      <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="okr-content">
+                      <h4>Team Development</h4>
+                      <p>
+                        90% team members achieving personal development goals
+                        through upskilling initiatives
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="okr-item">
+                    <div class="okr-icon">
+                      <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="okr-content">
+                      <h4>Customer Satisfaction</h4>
+                      <p>
+                        25% improvement in NPS scores through engineering-driven
+                        product enhancements
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4">Work Experience</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-badge">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <div class="timeline-content">
+                <h4>Engineering Manager - Healthtech</h4>
+                <h5>Huma Therapeutics, London</h5>
+                <p class="text-muted">Jan 2023 - Present</p>
+                <ul>
+                  <li>
+                    Led cross-functional teams (ML, data, devs) to drive
+                    scalable AI-powered SaMD solutions and healthtech
+                    innovation.
+                  </li>
+                  <li>
+                    Architecting Cloud-Native, Regulatory-Compliant Healthtech
+                    Systems at Huma
+                  </li>
+                  <li>
+                    Expanded into new markets with regulatory compliance
+                    expertise
+                  </li>
+                  <li>
+                    Implemented DORA metrics to drive high-performance
+                    engineering
+                  </li>
+                  <li>
+                    OKR-driven, metrics-focused culture to align engineering
+                    efforts with business objectives
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-badge">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <div class="timeline-content">
+                <h4>Engineering Manager - Software Services</h4>
+                <h5>Encora Digital Inc., Pune</h5>
+                <p class="text-muted">May 2020 - Dec 2022</p>
+                <ul>
+                  <li>Managed multimillion $ budgets, scaled global teams</li>
+                  <li>Agile transformation boosted launch speed 35%</li>
+                  <li>
+                    Migrated monolithic applications to microservices, reducing
+                    deployment time by 40%
+                  </li>
+                  <li>
+                    Founded "Knowledge-Sharing Friday", improved collaboration
+                    40%
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-badge">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <div class="timeline-content">
+                <h4>Co-founder & Technical Lead – Fintech</h4>
+                <h5>Wetech Digital, Pune</h5>
+                <p class="text-muted">Jan 2019 - May 2020</p>
+                <ul>
+                  <li>
+                    Integrated with MoneyHub, Morningstar, optimized speed 30%
+                  </li>
+                  <li>Led engineering in regulated financial environments</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-badge">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <div class="timeline-content">
+                <h4>CTO</h4>
+                <h5>iSuraksha Solutions, Pune</h5>
+                <p class="text-muted">Dec 2014 - Jul 2018</p>
+                <ul>
+                  <li>
+                    Built a cloud-native, scalable IoT platform for a leading
+                    automotive manufacturer, enabling real-time data processing
+                    and analytics.
+                  </li>
+                  <li>Built and scale an engineering team of 10+ developers</li>
+                  <li>
+                    Built a system of real-time processing of huge telemetry
+                    data from IoT devices
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4">Technical Skills</h2>
+
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="skill-category">
+                <h4><i class="fas fa-code"></i> Programming Languages</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Java</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">TypeScript</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="skill-category">
+                <h4><i class="fas fa-cogs"></i> Frameworks & Libraries</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Django</span>
+                  <span class="skill-tag">Flask</span>
+                  <span class="skill-tag">Spring Boot</span>
+                  <span class="skill-tag">JMeter</span>
+                  <span class="skill-tag">ReactJS</span>
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">Express</span>
+                  <span class="skill-tag">Nest.js</span>
+                  <span class="skill-tag">Next.js</span>
+                  <span class="skill-tag">React Native</span>
+                  <span class="skill-tag">Cordova</span>
+                  <span class="skill-tag">Ionic</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="skill-category">
+                <h4>
+                  <i class="fas fa-database"></i> Databases & Data Pipelines
+                </h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">MySQL</span>
+                  <span class="skill-tag">PostgreSQL</span>
+                  <span class="skill-tag">MongoDB</span>
+                  <span class="skill-tag">Redis</span>
+                  <span class="skill-tag">Cassandra</span>
+                  <span class="skill-tag">Apache Spark</span>
+                  <span class="skill-tag">Apache Kafka</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="skill-category">
+                <h4><i class="fas fa-cloud"></i> Cloud & Infrastructure</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">AWS</span>
+                  <span class="skill-tag">EC2</span>
+                  <span class="skill-tag">ECS</span>
+                  <span class="skill-tag">Lambda</span>
+                  <span class="skill-tag">S3</span>
+                  <span class="skill-tag">CloudFormation</span>
+                  <span class="skill-tag">Azure</span>
+                  <span class="skill-tag">AKS</span>
+                  <span class="skill-tag">OpenStack</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="skill-category">
+                <h4><i class="fas fa-brain"></i> AI & ML Technologies</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">LLM</span>
+                  <span class="skill-tag">OpenAI</span>
+                  <span class="skill-tag">Langchain</span>
+                  <span class="skill-tag">Hugging Face</span>
+                  <span class="skill-tag">Clade</span>
+                  <span class="skill-tag">CrewAI</span>
+                  <span class="skill-tag">n8n</span>
+                  <span class="skill-tag">flowise</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="skill-category">
+                <h4>
+                  <i class="fas fa-exchange-alt"></i> Microservices & API Design
+                </h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">RESTful APIs</span>
+                  <span class="skill-tag">gRPC</span>
+                  <span class="skill-tag">Pub/Sub (Kafka)</span>
+                  <span class="skill-tag">API Gateway</span>
+                  <span class="skill-tag">OAuth 2.0</span>
+                  <span class="skill-tag">JWT</span>
+                  <span class="skill-tag">Swagger/OpenAPI</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="skill-category">
+                <h4>
+                  <i class="fas fa-chart-line"></i> Monitoring & Observability
+                </h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">New Relic</span>
+                  <span class="skill-tag">Prometheus</span>
+                  <span class="skill-tag">Grafana</span>
+                  <span class="skill-tag">DataDog</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4">Featured Projects</h2>
+
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="project-card">
+                <h4>Healthcare Platform for SaMD</h4>
+                <p>
+                  Architected and built a cloud-native, regulatory-compliant
+                  SaMD platform for Huma Therapeutics, reducing development time
+                  by 50% and improving scalability.
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">Python</span>
+                  <span class="project-tag">Angular</span>
+                  <span class="project-tag">Kubernetes</span>
+                  <span class="project-tag">Cloud-Native</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="project-card">
+                <h4>Microservices Migration</h4>
+                <p>
+                  Led a team that migrated a monolithic application to a
+                  microservices architecture, reducing deployment time by 40%.
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">Kubernetes</span>
+                  <span class="project-tag">Docker</span>
+                  <span class="project-tag">Azure</span>
+                  <span class="project-tag">Java</span>
+                  <span class="project-tag">Spring Boot</span>
+                  <span class="project-tag">Spring Cloud</span>
+                  <span class="project-tag">Microservices</span>
+                  <span class="project-tag">API Gateway</span>
+                  <span class="project-tag">OpenAPI</span>
+                  <span class="project-tag">Kafka</span>
+                  <span class="project-tag">RabbitMQ</span>
+                  <span class="project-tag">Redis</span>
+                  <span class="project-tag">MySQL</span>
+                  <span class="project-tag">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="project-card">
+                <h4>IoT Platform for Telemetry Data</h4>
+                <p>
+                  Built a cloud-native, scalable IoT platform for a leading
+                  automotive manufacturer, enabling real-time data processing
+                  and analytics.
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">Java</span>
+                  <span class="project-tag">Node.js</span>
+                  <span class="project-tag">Spring Boot</span>
+                  <span class="project-tag">Spring Cloud</span>
+                  <span class="project-tag">Microservices</span>
+                  <span class="project-tag">Kafka</span>
+                  <span class="project-tag">RabbitMQ</span>
+                  <span class="project-tag">Redis</span>
+                  <span class="project-tag">MySQL</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="project-card">
+                <h4>Fintech Integration Platform</h4>
+                <p>
+                  Developed a secure platform integrating with financial
+                  services APIs including MorningHub, Morningstar, and other
+                  financial data providers. Implemented PCI DSS compliance and
+                  improved data retrieval speed by 30%.
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">Java</span>
+                  <span class="project-tag">Micronaut</span>
+                  <span class="project-tag">OAuth2</span>
+                  <span class="project-tag">Financial APIs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4">Education</h2>
+
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="education-card">
+                <div class="education-year">2023</div>
+                <h4 class="education-degree">PGP in AI & Machine Learning</h4>
+                <div class="education-school">
+                  University of Texas at Austin
+                </div>
+                <p class="education-details">
+                  Specialized in deep learning, computer vision, and natural
+                  language processing. Completed capstone project on healthcare
+                  predictive analytics.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="education-card">
+                <div class="education-year">2012</div>
+                <h4 class="education-degree">B.E. in Information Technology</h4>
+                <div class="education-school">JNTU Hyderabad</div>
+                <p class="education-details">
+                  Graduated with distinction. Final project on distributed
+                  systems earned university recognition.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications Section -->
+      <section id="certifications" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4">
+            Certifications & Professional Development
+          </h2>
+
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="certification-card">
+                <div class="certification-badge">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <div class="certification-details">
+                  <h4>MongoDB SI Associate</h4>
+                  <span class="certification-status completed"
+                    >October 2022</span
+                  >
+                  <span class="certification-description"
+                    >Expertise in database design, optimization, and
+                    integration</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="certification-card">
+                <div class="certification-badge">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <div class="certification-details">
+                  <h4>Azure AZ-900</h4>
+                  <span class="certification-status completed">June 2022</span>
+                  <span class="certification-description"
+                    >Cloud fundamentals and Azure services certification</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="certification-card">
+                <div class="certification-badge">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <div class="certification-details">
+                  <h4>AWS Certified Solutions Architect</h4>
+                  <span class="certification-status in-progress"
+                    >In Progress</span
+                  >
+                  <span class="certification-description"
+                    >Designing distributed systems on AWS infrastructure</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4">Get In Touch</h2>
+
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="contact-info-card">
+                <h4>Contact Information</h4>
+                <ul class="contact-list">
+                  <li><i class="fas fa-envelope"></i> hello@ankittater.com</li>
+                  <li>
+                    <i class="fas fa-map-marker-alt"></i> London, United Kingdom
+                  </li>
+                  <li>
+                    <i class="fab fa-linkedin"></i> linkedin.com/in/ankittater
+                  </li>
+                </ul>
+                <div class="social-icons mt-4">
+                  <a
+                    href="https://github.com/ankittater"
+                    target="_blank"
+                    class="social-icon"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a
+                    href="https://linkedin.com/in/ankittater"
+                    target="_blank"
+                    class="social-icon"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="contact-form-card">
+                <h4>Send a Message</h4>
+                <form id="contactForm">
+                  <div class="mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="contactName"
+                      name="name"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="contactEmail"
+                      name="email"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <textarea
+                      class="form-control"
+                      id="contactMessage"
+                      name="message"
+                      rows="4"
+                      placeholder="Your Message"
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    id="submitContact"
+                    class="btn btn-primary"
+                  >
+                    Send Message
+                  </button>
+                  <div
+                    id="contactFormStatus"
+                    class="mt-3"
+                    style="display: none"
+                  ></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
+    <!-- Footer -->
+    <footer class="footer py-4 bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">© 2025 Ankit Tater. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="mb-0">Engineering Management Professional</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script>
-        async function askQuestion() {
-            const question = document.getElementById('question').value;
-            if (!question) return;
+      async function askQuestion() {
+        const question = document.getElementById("question").value;
+        if (!question) return;
 
-            // Show loader and disable button
-            const loader = document.getElementById('loader');
-            const askButton = document.getElementById('ask-button');
-            const answerSection = document.getElementById('answer-section');
-            const answerElement = document.getElementById('answer');
+        // Show loader and disable button
+        const loader = document.getElementById("loader");
+        const askButton = document.getElementById("ask-button");
+        const answerSection = document.getElementById("answer-section");
+        const answerElement = document.getElementById("answer");
 
-            loader.style.display = 'block';
-            askButton.disabled = true;
-            answerSection.style.display = 'none';
+        loader.style.display = "block";
+        askButton.disabled = true;
+        answerSection.style.display = "none";
 
-            try {
-                const response = await fetch('/ask', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ question })
-                });
+        try {
+          const response = await fetch("/ask", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ question }),
+          });
 
-                const data = await response.json();
-                
-                // Format and display the answer
-                answerSection.style.display = 'block';
-                answerElement.innerHTML = formatAnswer(data.answer);
+          const data = await response.json();
 
-                // Hide loader and enable button
-                loader.style.display = 'none';
-                askButton.disabled = false;
-            } catch (error) {
-                console.error('Error:', error);
-                alert('An error occurred while processing your question.');
-                loader.style.display = 'none';
-                askButton.disabled = false;
+          // Format and display the answer
+          answerSection.style.display = "block";
+          answerElement.innerHTML = formatAnswer(data.answer);
+
+          // Hide loader and enable button
+          loader.style.display = "none";
+          askButton.disabled = false;
+        } catch (error) {
+          console.error("Error:", error);
+          alert("An error occurred while processing your question.");
+          loader.style.display = "none";
+          askButton.disabled = false;
+        }
+      }
+
+      function formatAnswer(answer) {
+        // Convert line breaks to paragraphs and handle basic formatting
+        return answer
+          .split("\n\n")
+          .map((paragraph) => {
+            if (paragraph.trim().startsWith("•")) {
+              // Convert bullet points to unordered list
+              const items = paragraph.split("•").filter((item) => item.trim());
+              return `<ul>${items
+                .map((item) => `<li>${item.trim()}</li>`)
+                .join("")}</ul>`;
             }
-        }
+            return `<p>${paragraph}</p>`;
+          })
+          .join("");
+      }
 
-        function formatAnswer(answer) {
-            // Convert line breaks to paragraphs and handle basic formatting
-            return answer
-                .split('\n\n')
-                .map(paragraph => {
-                    if (paragraph.trim().startsWith('•')) {
-                        // Convert bullet points to unordered list
-                        const items = paragraph.split('•').filter(item => item.trim());
-                        return `<ul>${items.map(item => `<li>${item.trim()}</li>`).join('')}</ul>`;
-                    }
-                    return `<p>${paragraph}</p>`;
-                })
-                .join('');
-        }
+      // Handle contact form submission
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const name = document.getElementById("contactName").value;
+          const email = document.getElementById("contactEmail").value;
+          const message = document.getElementById("contactMessage").value;
+
+          // Get UI elements
+          const submitButton = document.getElementById("submitContact");
+          const statusDiv = document.getElementById("contactFormStatus");
+
+          // Disable button and show processing status
+          submitButton.disabled = true;
+          statusDiv.innerHTML =
+            '<div class="alert alert-info">Sending your message...</div>';
+          statusDiv.style.display = "block";
+
+          try {
+            const response = await fetch("/contact", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ name, email, message }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+              // Show success message
+              statusDiv.innerHTML =
+                '<div class="alert alert-success">Your message has been sent successfully!</div>';
+              // Reset form
+              document.getElementById("contactForm").reset();
+            } else {
+              // Show error message
+              statusDiv.innerHTML = `<div class="alert alert-danger">${
+                data.error || "Something went wrong. Please try again."
+              }</div>`;
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            statusDiv.innerHTML =
+              '<div class="alert alert-danger">Failed to send message. Please try again later.</div>';
+          } finally {
+            // Re-enable button
+            submitButton.disabled = false;
+
+            // Automatically hide the status message after 5 seconds on success
+            if (statusDiv.querySelector(".alert-success")) {
+              setTimeout(() => {
+                statusDiv.style.display = "none";
+              }, 5000);
+            }
+          }
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html> 
+  </body>
+</html>
