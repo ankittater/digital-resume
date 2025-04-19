@@ -64,8 +64,10 @@ Ankit Tater seeks to leverage his extensive experience in Engineering Management
 
 ### Cloud & Architecture
 
-- **AWS:** EC2, ECS, Lambda, S3, CloudFormation, SageMaker, AWS CDK
+- **AWS:** EC2, ECS, Lambda, S3, CloudFormation, SageMaker, AWS CDK, DynamoDB, AWS Lambda
 - **Azure:** AKS, Azure Functions, App Service, Cosmos DB, Azure DevOps
+- **Google Cloud:** Google App Engine, Google Cloud Functions, Firebase
+- **Other Platforms:** Digital Ocean
 - **Architecture Patterns:** Microservices, event sourcing, CQRS, domain-driven design
 
 ### AI & Machine Learning
@@ -84,10 +86,50 @@ Ankit Tater seeks to leverage his extensive experience in Engineering Management
 
 ### Monitoring & Security
 
-- **Observability:** New Relic, Prometheus, Grafana, DataDog, distributed tracing
+- **Observability:** New Relic, Prometheus, Grafana, DataDog, distributed tracing, App Dynamics
 - **Logging:** ELK stack, log aggregation, centralized logging strategies
-- **Security:** Penetration testing, security scanning, threat modeling
+- **Security:** Penetration testing, security scanning, threat modeling, Burp Suite, Sonar Cloud
 - **Compliance:** GDPR, HIPAA, PCI-DSS implementation and auditing
+- **Analytics:** Mixpanel, GTM, AppsFlyer
+- **Performance Monitoring:** Real-time metrics, custom dashboards, alerting systems, SLAs/SLOs tracking
+- **Incident Management:** PagerDuty, Opsgenie, incident response protocols, postmortem analysis
+
+### High Performance & Scalability
+
+- **Scalable Architecture:** High-throughput systems, low-latency processing, distributed computing
+- **System Optimization:** Database query optimization, caching strategies, connection pooling
+- **Load Testing:** JMeter, Gatling, load simulation, stress testing, performance benchmarking
+- **High Availability:** Fault tolerance, disaster recovery, multi-region deployment, failover mechanisms
+- **Resilience Engineering:** Circuit breakers, bulkheads, retry mechanisms, back pressure handling
+- **Capacity Planning:** Resource utilization forecasting, scaling strategies, cost optimization
+
+### DevOps & CI/CD
+
+- **Version Control:** Git, GitHub, Bitbucket
+- **CI/CD:** Jenkins, GitHub Actions, CircleCI, GitLab CI, automated deployment pipelines
+- **Infrastructure:** Terraform, CloudFormation, infrastructure as code
+
+### Frameworks & Libraries
+
+- **Web Frameworks:** Spring Boot, Django, Flask, Angular, ReactJS, Node.js, Express, Nest.js, Next.js, Micronaut, Grails
+- **Mobile:** React Native, Cordova, Ionic, hybrid app development
+
+### IoT & Event-Driven Systems
+
+- **IoT Protocols:** MQTT, CoAP
+- **Messaging:** Apache Kafka, Amazon SQS, RabbitMQ, Pub/Sub, event-driven architectures
+- **Integration:** Bloomreach Integration, third-party system connectors
+
+### Leadership & Management
+
+- **Team Leadership:** Mentoring, coaching, performance management, career development
+- **Project Management:** Agile methodologies, Scrum, Kanban, project planning
+- **Strategic Planning:** OKRs, KPIs, roadmap development, resource allocation
+- **Compliance Management:** Regulatory frameworks, audit preparation, security governance
+- **Agile Practices:** Scrum Master, Product Owner, Sprint Planning, Retrospectives, Daily Stand-ups, Story Pointing, Velocity Tracking
+- **Agile Tools:** Jira, Confluence, Trello, Asana, Azure DevOps Boards, Monday.com
+- **Lean Management:** Value Stream Mapping, Continuous Improvement, Waste Reduction
+- **Scaling Agile:** SAFe (Scaled Agile Framework), LeSS (Large-Scale Scrum), Scrum of Scrums
 
 ## DOMAIN EXPERTISE
 
@@ -282,7 +324,7 @@ Duration of work: August 2012 September 2014
 
 ### Healthcare Platform for SaMD (Huma Therapeutics)
 
-Architected and built a cloud-native, regulatory-compliant SaMD platform for Huma Therapeutics, reducing development time by 50% and improving scalability for patient monitoring and health analytics.
+Architected and built a cloud-native, regulatory-compliant SaMD platform for Huma Therapeutics, reducing development time by 50% and improving scalability for patient monitoring and health analytics. Implemented high-throughput data processing systems with low-latency APIs capable of handling 10,000+ concurrent users while maintaining sub-second response times. Established comprehensive performance monitoring and alerting systems to ensure system reliability.
 
 **Technologies Used:**
 
@@ -290,10 +332,12 @@ Architected and built a cloud-native, regulatory-compliant SaMD platform for Hum
 - FHIR/HL7 integration, medical data standards
 - Machine learning for predictive analytics
 - HIPAA-compliant data storage and processing
+- Performance monitoring with custom dashboards and SLA tracking
+- Low-latency APIs with caching strategies
 
 ### Microservices Migration (Encora Digital)
 
-Led a team that migrated a monolithic e-commerce application to a microservices architecture, reducing deployment time by 40% and enabling independent scaling of components.
+Led a team that migrated a monolithic e-commerce application to a microservices architecture, reducing deployment time by 40% and enabling independent scaling of components. Implemented comprehensive performance monitoring with custom dashboards and alerting systems to ensure high availability. Established incident management protocols that reduced MTTR from 5 hours to under 60 minutes, improving system resilience and uptime to 99.95%.
 
 **Technologies Used:**
 
@@ -302,11 +346,13 @@ Led a team that migrated a monolithic e-commerce application to a microservices 
 - API Gateway, OpenAPI for service documentation
 - Kafka for event-driven communication
 - MySQL, PostgreSQL, Redis for data persistence
-- Monitoring and observability stack
+- Monitoring and observability stack (Prometheus, Grafana, DataDog)
+- Circuit breakers, retry mechanisms, and back-pressure handling
+- PagerDuty and Opsgenie for incident response
 
 ### IoT Platform for Telemetry Data (iSuraksha Solutions)
 
-Built a cloud-native, scalable IoT platform for a leading automotive manufacturer, enabling real-time data processing and analytics for vehicle telemetry and fleet management.
+Built a cloud-native, scalable IoT platform for a leading automotive manufacturer, enabling real-time data processing and analytics for vehicle telemetry and fleet management. Engineered a high-throughput system processing over 1M data points per minute with sophisticated caching strategies and load balancing to ensure consistent performance under peak loads. Implemented multi-region deployment for disaster recovery and failover.
 
 **Technologies Used:**
 
@@ -316,6 +362,9 @@ Built a cloud-native, scalable IoT platform for a leading automotive manufacture
 - Time-series databases for telemetry storage
 - Real-time dashboards and analytics
 - Mobile apps for notifications and monitoring
+- Connection pooling and query optimization
+- Load testing with JMeter and custom stress testing tools
+- Multi-region deployment for high availability
 
 ### Fintech Integration Platform (Wetech Digital)
 
