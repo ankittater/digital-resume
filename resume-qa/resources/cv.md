@@ -128,7 +128,7 @@ Ankit Tater seeks to leverage his extensive experience in Engineering Management
 
 ### Engineering Manager at Huma Therapeutics, London
 
-_January 2023 – Present_
+Duration of work: May 2020 – December 2022 January 2023 – Present
 
 **Company:** Huma Therapeutics is a global healthtech company that transforms healthcare and research through digital biomarkers, predictive algorithms and decentralized care.
 
@@ -160,7 +160,7 @@ _January 2023 – Present_
 
 ### Engineering Manager at Encora Digital Inc., Pune
 
-_May 2020 – December 2022_
+Duration of work: May 2020 – December 2022
 
 **Company:** Encora Digital is a product engineering services company that specializes in building digital products for startups and enterprises.
 
@@ -185,7 +185,7 @@ _May 2020 – December 2022_
 
 ### Technical Lead & Co-founder at Wetech Digital, Pune
 
-_January 2019 – May 2020_
+Duration of work: January 2019 – May 2020
 
 **Company:** Wetech Digital is a fintech solutions provider specializing in financial data integration and secure banking platforms.
 
@@ -202,7 +202,7 @@ _January 2019 – May 2020_
 
 ### CTO/Co-Founder at iSuraksha Solutions Pvt. Ltd., Pune
 
-_November 2014 – July 2018_
+Duration of work: November 2014 – July 2018
 
 **Company:** iSuraksha Solutions is an IoT and vehicle telematics company providing real-time tracking and analytics for automotive and logistics industries.
 
@@ -233,7 +233,7 @@ _November 2014 – July 2018_
 
 ### Application Developer at BIS Software Development Services Pvt. Ltd., Gurugram
 
-_August 2012 - September 2014_
+Duration of work: August 2012 September 2014
 
 **Company:** BIS Software Development Services is an enterprise software development company specializing in custom application development for diverse industries.
 

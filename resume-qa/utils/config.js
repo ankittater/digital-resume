@@ -13,8 +13,8 @@ export const CHUNK_SIZE = 1000;
 export const CHUNK_OVERLAP = 200;
 
 // Search parameters
-export const DEFAULT_TOP_K = 3;
-export const MIN_SIMILARITY_SCORE = 0.3;
+export const DEFAULT_TOP_K = 15;
+export const MIN_SIMILARITY_SCORE = 0.1;
 
 // Text similarity specific
 export const TEXT_MIN_SIMILARITY_SCORE = 0.1;
