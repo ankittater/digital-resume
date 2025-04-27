@@ -1,8 +1,8 @@
 {
-  "name": "resume-qa",
+  "name": "json-resume-rag",
   "version": "1.0.0",
   "type": "module",
-  "description": "Resume Q&A system with Hugging Face embeddings and DeepSeek",
+  "description": "JSON-powered resume portfolio with RAG question answering system",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -10,10 +10,12 @@
   },
   "keywords": [
     "resume",
-    "qa",
-    "profile",
-    "huggingface",
-    "deepseek"
+    "portfolio",
+    "rag",
+    "json",
+    "question-answering",
+    "transformers",
+    "vector-search"
   ],
   "author": "",
   "license": "ISC",

@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "title": "Ankit Tater - Engineering Management Professional | AI/ML & High-Performance Systems Expert",
+    "description": "Strategic Engineering Leader with 12+ years of experience in Healthtech, Fintech, and E-commerce. Expert in AI/ML, Cloud Architecture, High Performance Systems, and Team Leadership.",
+    "keywords": "Engineering Manager, CTO, AI/ML, Cloud Architecture, Team Leadership, High Performance Systems, Microservices, Incident Management, Healthtech, Fintech, Performance Monitoring, Resilience Engineering, Java, Python, JavaScript, TypeScript, Node.js, AWS, Azure, Google Cloud, Firebase, DynamoDB, Lambda, Kubernetes, DevOps, GitHub Actions, Agile, Scrum, SAFe, IoT, MQTT, Pub/Sub, Event Driven Systems",
+    "author": "Ankit Tater",
+    "image": "https://example.com/images/ankit-tater-profile.jpg",
+    "url": "https://ankittater.com/"
+  },
+  "structured_data": {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ankit Tater",
+    "url": "https://ankittater.com",
+    "image": "https://example.com/images/ankit-tater-profile.jpg",
+    "jobTitle": "Engineering Management Professional",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Huma Therapeutics"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressCountry": "United Kingdom"
+    },
+    "email": "hello@ankittater.com",
+    "sameAs": [
+      "https://github.com/ankittater",
+      "https://linkedin.com/in/ankittater"
+    ],
+    "description": "Strategic Engineering Leader with 12+ years of experience building and scaling high-performance teams and delivering enterprise-grade solutions.",
+    "knowsAbout": [
+      "AI/ML",
+      "Cloud Architecture",
+      "Team Leadership",
+      "Microservices",
+      "High Performance Systems",
+      "Incident Management",
+      "Performance Monitoring",
+      "Resilience Engineering",
+      "Java",
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "AWS",
+      "Azure",
+      "Google Cloud",
+      "Firebase",
+      "DynamoDB",
+      "Lambda",
+      "Kubernetes",
+      "DevOps",
+      "GitHub Actions",
+      "Agile",
+      "Scrum",
+      "SAFe",
+      "IoT",
+      "MQTT",
+      "Event Driven Systems"
+    ],
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "JNTU Hyderabad",
+        "location": "Hyderabad, India"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Great Learning",
+        "location": "India"
+      }
+    ]
+  },
+  "personal": {
+    "name": "Ankit Tater",
+    "headline": "Engineering Manager – Healthtech | AI/ML | Cloud | SaMD | Global Scale",
+    "location": "London, United Kingdom",
+    "contacts": [
+      {
+        "type": "email",
+        "value": "mailto:hello@ankittater.com",
+        "icon": "fas fa-envelope"
+      },
+      {
+        "type": "linkedin",
+        "value": "https://linkedin.com/in/ankittater",
+        "icon": "fab fa-linkedin"
+      },
+      {
+        "type": "github",
+        "value": "https://github.com/ankittater",
+        "icon": "fab fa-github"
+      }
+    ]
+  },
+  "about": {
+    "summary": [
+      "Strategic Engineering Leader with 12+ years of experience building and scaling high-performance teams and delivering enterprise-grade, cloud-native, and regulatory-compliant solutions across Healthtech, Fintech, and E-commerce.",
+      "As CTO and co-founder of two tech ventures, I led product and engineering from the ground up—transforming ambitious ideas into scalable, market-ready solutions. I've consistently navigated the full product lifecycle, from architecture to execution, while building resilient, high-impact teams. My leadership philosophy is grounded in clarity, ownership, and collaboration, with a strong focus on cultivating engineering cultures that prioritize accountability, continuous improvement, and meaningful customer impact."
+    ],
+    "expertise": [
+      {
+        "name": "Architecture for Scalability",
+        "icon": "fas fa-sitemap"
+      },
+      {
+        "name": "Generative AI & LLMs",
+        "icon": "fas fa-robot"
+      },
+      {
+        "name": "AI/ML Lifecycle & MLOps",
+        "icon": "fas fa-brain"
+      },
+      {
+        "name": "Cloud-Native Development",
+        "icon": "fas fa-cloud"
+      },
+      {
+        "name": "Team Leadership",
+        "icon": "fas fa-users"
+      },
+      {
+        "name": "Regulatory Compliance",
+        "icon": "fas fa-shield-alt"
+      }
+    ]
+  },
+  "engineering_philosophy": {
+    "intro": "My approach to engineering leadership is rooted in data-driven decision making, continuous improvement, and creating a culture of technical excellence:",
+    "principles": [
+      {
+        "name": "Strategic Alignment",
+        "description": "Aligning engineering efforts with business objectives through clear OKRs and transparent roadmaps",
+        "icon": "fas fa-compass"
+      },
+      {
+        "name": "Metrics-Driven Culture",
+        "description": "Establishing and tracking DORA metrics to continuously improve delivery performance",
+        "icon": "fas fa-chart-bar"
+      },
+      {
+        "name": "Team Empowerment",
+        "description": "Creating autonomous teams with clear ownership and decision-making authority",
+        "icon": "fas fa-users-cog"
+      },
+      {
+        "name": "Learning Culture",
+        "description": "Implementing blameless post-mortems, experimentation frameworks, and innovation time",
+        "icon": "fas fa-graduation-cap"
+      }
+    ],
+    "dora_metrics": {
+      "intro": "Driving high-performance engineering through measurable DevOps practices:",
+      "metrics": [
+        {
+          "name": "Deployment Frequency",
+          "value": "Daily Deployments",
+          "improvement": "↑ 300% improvement"
+        },
+        {
+          "name": "Lead Time for Changes",
+          "value": "< 24 hours",
+          "improvement": "↓ 75% reduction"
+        },
+        {
+          "name": "Mean Time to Recover",
+          "value": "< 60 minutes",
+          "improvement": "↓ 80% reduction"
+        },
+        {
+          "name": "Change Failure Rate",
+          "value": "< 5%",
+          "improvement": "↓ 65% reduction"
+        }
+      ]
+    }
+  },
+  "resume_content": "# ANKIT TATER | ENGINEERING MANAGEMENT PROFESSIONAL\n\n## PROFILE SUMMARY\n\nAnkit Tater is a Strategic Engineering Leader with 12+ years of experience building and scaling high-performance teams and delivering enterprise-grade, cloud-native, and regulatory-compliant solutions across Healthtech, Fintech, and E-commerce. Currently working as Engineering Manager at Huma Therapeutics in London.\n\n## CONTACT INFORMATION\n\n- **Full Name:** Ankit Tater\n- **Current Role:** Engineering Manager at Huma Therapeutics\n- **Location:** London, United Kingdom\n- **Email:** hello@ankittater.com\n- **LinkedIn:** [linkedin.com/in/ankittater](http://linkedin.com/in/ankittater)\n- **GitHub:** [github.com/ankittater](https://github.com/ankittater)\n\n## CAREER OBJECTIVE\n\nAnkit Tater seeks to leverage his extensive experience in Engineering Management, AI/ML implementation, cloud architecture, and cross-functional team leadership to drive innovation and digital transformation in enterprise environments. His focus is on building scalable, regulatory-compliant technology solutions that deliver measurable business value.\n\n## EDUCATION AND QUALIFICATIONS\n\n- **2023:** Postgraduate Program in AI & Machine Learning, _University of Texas at Austin_\n\n  - Specialized in deep learning, computer vision, and natural language processing\n  - Completed capstone project on healthcare predictive analytics using neural networks\n  - Gained expertise in TensorFlow, PyTorch, and deployment of ML models in production\n\n- **2012:** Bachelor of Engineering in Information Technology, _JNTU Hyderabad_\n  - Graduated with distinction\n  - Final project on distributed systems earned university recognition\n  - Coursework included data structures, algorithms, database management, and software engineering\n\n## PROFESSIONAL CERTIFICATIONS\n\n- **MongoDB SI Associate** (October 2022) - Expertise in MongoDB design, implementation, and optimization\n- **Microsoft Azure AZ-900** (June 2022) - Cloud fundamentals and Azure services\n- **AWS Certified Solutions Architect** (In Progress) - Comprehensive AWS infrastructure design\n\n## CORE COMPETENCIES\n\n- **Architecture Engineering:** Microservices, API design, distributed systems, cloud-native architecture\n- **AI/ML Development:** LLMs, RAG pipelines, prompt engineering, neural networks, machine learning operations\n- **Cloud Expertise:** AWS (EC2, Lambda, S3, ECS), Azure (AKS, Functions, Cosmos DB), Kubernetes orchestration\n- **Leadership Skills:** Team building, mentorship, cross-functional collaboration, strategic planning\n- **Regulatory Knowledge:** HIPAA, GDPR, PCI-DSS, FDA compliance for SaMD (Software as Medical Device)\n- **Technical Excellence:** CI/CD implementation, test automation, infrastructure as code, observability\n\n## TECHNICAL SKILLS MATRIX\n\n### Programming & Development\n\n- **Languages:** Java (10+ years), JavaScript (8+ years), TypeScript (5+ years), Python (7+ years)\n- **Frameworks:** Spring Boot, Django, Flask, ReactJS, Node.js, Express, Nest.js, Next.js\n- **Mobile:** React Native, Cordova, Ionic, hybrid app development\n- **Testing:** JUnit, Jest, Cypress, Selenium, TDD/BDD methodologies\n\n### Data & Infrastructure\n\n- **Databases:** MySQL, PostgreSQL, MongoDB, Redis, Cassandra, Pinecone, Weaviate\n- **Big Data:** Apache Spark, Hadoop, data warehousing, ETL pipelines\n- **Messaging:** Apache Kafka, Amazon SQS, RabbitMQ, event-driven architectures\n- **DevOps:** Kubernetes, Docker, Helm, Terraform, infrastructure as code\n- **CI/CD:** Jenkins, GitHub Actions, CircleCI, GitLab CI, automated deployment pipelines\n\n### Cloud & Architecture\n\n- **AWS:** EC2, ECS, Lambda, S3, CloudFormation, SageMaker, AWS CDK, DynamoDB, AWS Lambda\n- **Azure:** AKS, Azure Functions, App Service, Cosmos DB, Azure DevOps\n- **Google Cloud:** Google App Engine, Google Cloud Functions, Firebase\n- **Other Platforms:** Digital Ocean\n- **Architecture Patterns:** Microservices, event sourcing, CQRS, domain-driven design\n\n### AI & Machine Learning\n\n- **Frameworks:** TensorFlow, PyTorch, Scikit-learn, Keras, Hugging Face Transformers\n- **LLM Technologies:** OpenAI API, Langchain, prompt engineering, Clade, CrewAI\n- **MLOps:** Model monitoring, feature stores, ML pipelines, experiment tracking\n- **Deployment:** Model serving, A/B testing, monitoring ML in production\n\n### API & Integration\n\n- **API Design:** RESTful APIs, gRPC, GraphQL, API Gateway, OpenAPI/Swagger\n- **Security:** OAuth 2.0, JWT, SAML, identity management\n- **Integration:** Third-party API integration, webhooks, ETL processes\n- **Testing:** API testing, performance testing, service virtualization\n\n### Monitoring & Security\n\n- **Observability:** New Relic, Prometheus, Grafana, DataDog, distributed tracing, App Dynamics\n- **Logging:** ELK stack, log aggregation, centralized logging strategies\n- **Security:** Penetration testing, security scanning, threat modeling, Burp Suite, Sonar Cloud\n- **Compliance:** GDPR, HIPAA, PCI-DSS implementation and auditing\n- **Analytics:** Mixpanel, GTM, AppsFlyer\n- **Performance Monitoring:** Real-time metrics, custom dashboards, alerting systems, SLAs/SLOs tracking\n- **Incident Management:** PagerDuty, Opsgenie, incident response protocols, postmortem analysis\n\n### High Performance & Scalability\n\n- **Scalable Architecture:** High-throughput systems, low-latency processing, distributed computing\n- **System Optimization:** Database query optimization, caching strategies, connection pooling\n- **Load Testing:** JMeter, Gatling, load simulation, stress testing, performance benchmarking\n- **High Availability:** Fault tolerance, disaster recovery, multi-region deployment, failover mechanisms\n- **Resilience Engineering:** Circuit breakers, bulkheads, retry mechanisms, back pressure handling\n- **Capacity Planning:** Resource utilization forecasting, scaling strategies, cost optimization\n\n### DevOps & CI/CD\n\n- **Version Control:** Git, GitHub, Bitbucket\n- **CI/CD:** Jenkins, GitHub Actions, CircleCI, GitLab CI, automated deployment pipelines\n- **Infrastructure:** Terraform, CloudFormation, infrastructure as code\n\n### Frameworks & Libraries\n\n- **Web Frameworks:** Spring Boot, Django, Flask, Angular, ReactJS, Node.js, Express, Nest.js, Next.js, Micronaut, Grails\n- **Mobile:** React Native, Cordova, Ionic, hybrid app development\n\n### IoT & Event-Driven Systems\n\n- **IoT Protocols:** MQTT, CoAP\n- **Messaging:** Apache Kafka, Amazon SQS, RabbitMQ, Pub/Sub, event-driven architectures\n- **Integration:** Bloomreach Integration, third-party system connectors\n\n### Leadership & Management\n\n- **Team Leadership:** Mentoring, coaching, performance management, career development\n- **Project Management:** Agile methodologies, Scrum, Kanban, project planning\n- **Strategic Planning:** OKRs, KPIs, roadmap development, resource allocation\n- **Compliance Management:** Regulatory frameworks, audit preparation, security governance\n- **Agile Practices:** Scrum Master, Product Owner, Sprint Planning, Retrospectives, Daily Stand-ups, Story Pointing, Velocity Tracking\n- **Agile Tools:** Jira, Confluence, Trello, Asana, Azure DevOps Boards, Monday.com\n- **Lean Management:** Value Stream Mapping, Continuous Improvement, Waste Reduction\n- **Scaling Agile:** SAFe (Scaled Agile Framework), LeSS (Large-Scale Scrum), Scrum of Scrums"
+}

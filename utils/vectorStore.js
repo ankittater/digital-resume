@@ -1,8 +1,6 @@
-import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { pipeline } from "@xenova/transformers";
-import axios from "axios";
 import dotenv from "dotenv";
 import {
   EMBEDDING_MODEL,
@@ -48,17 +46,14 @@ async function getEmbedding(text) {
 
 /**
  * Initialize the vector store with the resume content
- * @param {string} filePath - Path to the resume file
+ * @param {string} resumeContent - Resume content as text (can be content from file or JSON)
  */
-export async function initializeVectorStore(filePath) {
+export async function initializeVectorStore(resumeContent) {
   try {
     console.log("Initializing vector store with local embeddings model...");
 
     // Initialize the feature extractor
     await initializeFeatureExtractor();
-
-    // Read and parse the resume file
-    const resumeContent = fs.readFileSync(filePath, "utf8");
 
     // Split content into sections and chunks
     const sections = resumeContent

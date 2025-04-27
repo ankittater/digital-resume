@@ -1,4 +1,3 @@
-import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { DEFAULT_TOP_K, TEXT_MIN_SIMILARITY_SCORE } from "./config.js";
@@ -12,14 +11,11 @@ let initialized = false;
 
 /**
  * Initialize the text similarity system
- * @param {string} filePath - Path to the resume file
+ * @param {string} resumeContent - Resume content as text
  * @returns {boolean} - Success status
  */
-export async function initialize(filePath) {
+export async function initialize(resumeContent) {
   try {
-    // Read and parse the resume file
-    const resumeContent = fs.readFileSync(filePath, "utf8");
-
     // Split content into sections
     const sections = resumeContent
       .split(/^#+ /m)

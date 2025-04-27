@@ -1,0 +1,661 @@
+{
+  "site_config": {
+    "meta": {
+      "title": "Ankit Tater - Engineering Management Professional",
+      "description": "Engineering Manager with expertise in AI/ML, Cloud Architecture, and Digital Transformation",
+      "keywords": "engineering manager, leadership, AI/ML, cloud architecture, digital transformation",
+      "author": "Ankit Tater",
+      "robots": "index, follow",
+      "url": "https://ankittater.com",
+      "image": "/images/profile.jpg",
+      "og": {
+        "type": "website",
+        "url": "https://ankittater.com",
+        "title": "Ankit Tater - Engineering Management Professional",
+        "description": "Engineering Manager with expertise in AI/ML, Cloud Architecture, and Digital Transformation",
+        "image": "/images/profile.jpg"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "url": "https://ankittater.com",
+        "title": "Ankit Tater - Engineering Management Professional",
+        "description": "Engineering Manager with expertise in AI/ML, Cloud Architecture, and Digital Transformation",
+        "image": "/images/profile.jpg"
+      },
+      "favicon": {
+        "default": "/images/favicon.ico",
+        "png16": "/images/favicon-16x16.png",
+        "png32": "/images/favicon-32x32.png",
+        "apple": "/images/apple-touch-icon.png"
+      }
+    },
+    "theme": {
+      "primary_color": "#0d6efd",
+      "secondary_color": "#6c757d",
+      "background_color": "#ffffff",
+      "text_color": "#212529"
+    },
+    "styles": {
+      "external": [
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      ],
+      "local": ["/css/style.css"]
+    },
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    ]
+  },
+  "layout": {
+    "navigation": {
+      "brand": "ANKIT TATER",
+      "links": [
+        {
+          "text": "About",
+          "url": "#about"
+        },
+        {
+          "text": "Experience",
+          "url": "#experience"
+        },
+        {
+          "text": "Skills",
+          "url": "#skills"
+        },
+        {
+          "text": "Engineering Excellence",
+          "url": "#engineering-excellence"
+        },
+        {
+          "text": "Projects",
+          "url": "#projects"
+        },
+        {
+          "text": "Education",
+          "url": "#education"
+        },
+        {
+          "text": "Certifications",
+          "url": "#certifications"
+        },
+        {
+          "text": "Contact",
+          "url": "#contact"
+        }
+      ]
+    },
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "enabled": true,
+        "order": 1
+      },
+      "about": {
+        "id": "about",
+        "enabled": true,
+        "order": 2
+      },
+      "engineering_excellence": {
+        "id": "engineering-excellence",
+        "enabled": true,
+        "order": 3
+      },
+      "experience": {
+        "id": "experience",
+        "enabled": true,
+        "order": 4
+      },
+      "skills": {
+        "id": "skills",
+        "enabled": true,
+        "order": 5
+      },
+      "projects": {
+        "id": "projects",
+        "enabled": true,
+        "order": 6
+      },
+      "education": {
+        "id": "education",
+        "enabled": true,
+        "order": 7
+      },
+      "certifications": {
+        "id": "certifications",
+        "enabled": true,
+        "order": 8
+      },
+      "contact": {
+        "id": "contact",
+        "enabled": true,
+        "order": 9
+      }
+    }
+  },
+  "content": {
+    "hero": {
+      "title": "Engineering Management Professional",
+      "subtitle": "Building high-performance teams and delivering scalable solutions in AI/ML, Cloud Architecture, and more.",
+      "buttons": [
+        {
+          "text": "Get in Touch",
+          "url": "#contact",
+          "class": "btn btn-primary px-4 py-2"
+        },
+        {
+          "text": "Learn More",
+          "url": "#about",
+          "class": "btn btn-outline-dark px-4 py-2"
+        }
+      ]
+    },
+    "personal": {
+      "name": "Ankit Tater",
+      "headline": "Engineering Manager | AI/ML | Cloud Architecture | Digital Transformation",
+      "location": "London, United Kingdom",
+      "location_icon": "fas fa-map-marker-alt",
+      "contacts": [
+        {
+          "type": "email",
+          "value": "mailto:hello@ankittater.com",
+          "icon": "fas fa-envelope"
+        },
+        {
+          "type": "linkedin",
+          "value": "https://linkedin.com/in/ankittater",
+          "icon": "fab fa-linkedin"
+        },
+        {
+          "type": "github",
+          "value": "https://github.com/ankittater",
+          "icon": "fab fa-github"
+        }
+      ]
+    },
+    "about": {
+      "title": "About Me",
+      "summary": [
+        "Engineering leader with 10+ years of experience in building and scaling high-performance teams across AI/ML, Cloud Architecture, and Digital Transformation.",
+        "Passionate about leveraging technology to solve complex business problems and drive innovation. Known for building scalable, secure, and performant systems that deliver business value."
+      ],
+      "expertise_title": "Areas of Expertise",
+      "expertise": [
+        {
+          "name": "Team Leadership",
+          "icon": "fas fa-users"
+        },
+        {
+          "name": "AI/ML Engineering",
+          "icon": "fas fa-brain"
+        },
+        {
+          "name": "Cloud Architecture",
+          "icon": "fas fa-cloud"
+        },
+        {
+          "name": "Digital Transformation",
+          "icon": "fas fa-sync-alt"
+        }
+      ]
+    },
+    "qa": {
+      "title": "Ask anything about Me",
+      "instruction": "Ask a question about my skills, experience, projects, etc:",
+      "placeholder": "e.g., What are Ankit's skills? What is Ankit's experience?",
+      "button_text": "Ask",
+      "answer_label": "Answer"
+    },
+    "engineering_excellence": {
+      "title": "Engineering Excellence",
+      "sections": [
+        {
+          "id": "philosophy",
+          "type": "philosophy",
+          "title": "Engineering Leadership Philosophy",
+          "intro": "My approach to engineering leadership is built on creating systems and processes that empower teams to deliver exceptional results while maintaining technical excellence.",
+          "principles": [
+            {
+              "name": "Technical Excellence",
+              "description": "Establishing strong engineering practices including CI/CD, testing, and code quality standards",
+              "icon": "fas fa-code"
+            },
+            {
+              "name": "Team Empowerment",
+              "description": "Creating autonomous teams with the tools and authority to make decisions",
+              "icon": "fas fa-users-cog"
+            },
+            {
+              "name": "Data-Driven Decision Making",
+              "description": "Using metrics and customer feedback to guide technical decisions",
+              "icon": "fas fa-chart-line"
+            },
+            {
+              "name": "Continuous Improvement",
+              "description": "Regular retrospectives and process optimization to continuously evolve",
+              "icon": "fas fa-sync-alt"
+            }
+          ]
+        },
+        {
+          "id": "metrics",
+          "type": "metrics",
+          "title": "DORA Metrics Achievements",
+          "intro": "Improved key engineering performance indicators across teams:",
+          "items": [
+            {
+              "name": "Deployment Frequency",
+              "value": "2-3 times per day",
+              "improvement": "↑ 300% in 6 months"
+            },
+            {
+              "name": "Lead Time for Changes",
+              "value": "Under 24 hours",
+              "improvement": "↓ 60% reduction"
+            },
+            {
+              "name": "MTTR",
+              "value": "< 45 minutes",
+              "improvement": "↓ 75% reduction"
+            },
+            {
+              "name": "Change Failure Rate",
+              "value": "< 5%",
+              "improvement": "↓ 70% reduction"
+            }
+          ]
+        },
+        {
+          "id": "okr",
+          "type": "okr",
+          "title": "OKR Implementation Impact",
+          "intro": "Strategic alignment through Objectives and Key Results framework:",
+          "items": [
+            {
+              "title": "Engineering Velocity",
+              "description": "40% increase in feature delivery while maintaining quality metrics",
+              "icon": "fas fa-bullseye"
+            },
+            {
+              "title": "Technical Debt Reduction",
+              "description": "35% reduction in critical technical debt measured through code quality metrics",
+              "icon": "fas fa-code-branch"
+            },
+            {
+              "title": "Team Development",
+              "description": "90% team members achieving personal development goals through upskilling initiatives",
+              "icon": "fas fa-user-check"
+            },
+            {
+              "title": "Customer Satisfaction",
+              "description": "25% improvement in NPS scores through engineering-driven product enhancements",
+              "icon": "fas fa-chart-line"
+            }
+          ]
+        }
+      ]
+    },
+    "experience": {
+      "title": "Work Experience",
+      "layout_type": "timeline",
+      "items": [
+        {
+          "position": "Engineering Manager - Healthtech",
+          "company": "Huma Therapeutics",
+          "location": "London",
+          "period": "Jan 2023 - Present",
+          "icon": "fas fa-briefcase",
+          "responsibilities": [
+            "Led cross-functional teams (ML, data, devs) to drive scalable AI-powered SaMD solutions and healthtech innovation.",
+            "Architecting Cloud-Native, Regulatory-Compliant Healthtech Systems at Huma",
+            "Expanded into new markets with regulatory compliance expertise",
+            "Implemented DORA metrics to drive high-performance engineering",
+            "OKR-driven, metrics-focused culture to align engineering efforts with business objectives"
+          ]
+        },
+        {
+          "position": "Engineering Manager - Software Services",
+          "company": "Encora Digital Inc.",
+          "location": "Pune",
+          "period": "May 2020 - Dec 2022",
+          "icon": "fas fa-briefcase",
+          "responsibilities": [
+            "Managed multimillion $ budgets, scaled global teams",
+            "Agile transformation boosted launch speed 35%",
+            "Migrated monolithic applications to microservices, reducing deployment time by 40%",
+            "Founded \"Knowledge-Sharing Friday\", improved collaboration 40%"
+          ]
+        },
+        {
+          "position": "Co-founder & Technical Lead – Fintech",
+          "company": "Wetech Digital",
+          "location": "Pune",
+          "period": "Jan 2019 - May 2020",
+          "icon": "fas fa-briefcase",
+          "responsibilities": [
+            "Integrated with MoneyHub, Morningstar, optimized speed 30%",
+            "Led engineering in regulated financial environments"
+          ]
+        },
+        {
+          "position": "CTO",
+          "company": "iSuraksha Solutions",
+          "location": "Pune",
+          "period": "Dec 2014 - Jul 2018",
+          "icon": "fas fa-briefcase",
+          "responsibilities": [
+            "Built a cloud-native, scalable IoT platform for a leading automotive manufacturer, enabling real-time data processing and analytics.",
+            "Built and scale an engineering team of 10+ developers",
+            "Built a system of real-time processing of huge telemetry data from IoT devices"
+          ]
+        }
+      ]
+    },
+    "skills": {
+      "title": "Technical Skills",
+      "layout_type": "grid",
+      "categories": [
+        {
+          "name": "Programming Languages",
+          "icon": "fas fa-code",
+          "skills": ["Java", "Python", "JavaScript", "TypeScript"]
+        },
+        {
+          "name": "Frameworks & Libraries",
+          "icon": "fas fa-cogs",
+          "skills": [
+            "Django",
+            "Flask",
+            "Spring Boot",
+            "JMeter",
+            "ReactJS",
+            "Node.js",
+            "Express",
+            "Nest.js",
+            "Next.js",
+            "React Native",
+            "Cordova",
+            "Ionic"
+          ]
+        },
+        {
+          "name": "Databases & Data Pipelines",
+          "icon": "fas fa-database",
+          "skills": [
+            "MySQL",
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Cassandra",
+            "Apache Spark",
+            "Apache Kafka"
+          ]
+        },
+        {
+          "name": "Cloud & Infrastructure",
+          "icon": "fas fa-cloud",
+          "skills": [
+            "AWS",
+            "EC2",
+            "ECS",
+            "Lambda",
+            "S3",
+            "CloudFormation",
+            "Azure",
+            "AKS",
+            "OpenStack",
+            "DynamoDB",
+            "Google App Engine",
+            "Firebase",
+            "Google Cloud Functions",
+            "Digital Ocean"
+          ]
+        },
+        {
+          "name": "AI & ML Technologies",
+          "icon": "fas fa-brain",
+          "skills": [
+            "LLM",
+            "OpenAI",
+            "Langchain",
+            "Hugging Face",
+            "Clade",
+            "CrewAI",
+            "n8n",
+            "flowise"
+          ]
+        },
+        {
+          "name": "Microservices & API Design",
+          "icon": "fas fa-exchange-alt",
+          "skills": [
+            "RESTful APIs",
+            "gRPC",
+            "Pub/Sub (Kafka)",
+            "API Gateway",
+            "OAuth 2.0",
+            "JWT",
+            "Swagger/OpenAPI",
+            "Event Driven Systems"
+          ]
+        },
+        {
+          "name": "Monitoring & Observability",
+          "icon": "fas fa-chart-line",
+          "skills": [
+            "New Relic",
+            "Prometheus",
+            "Grafana",
+            "DataDog",
+            "App Dynamics",
+            "PagerDuty",
+            "Opsgenie",
+            "SLAs/SLOs"
+          ]
+        },
+        {
+          "name": "High Performance Systems",
+          "icon": "fas fa-tachometer-alt",
+          "skills": [
+            "High-Throughput",
+            "Low-Latency",
+            "Distributed Computing",
+            "Caching Strategies",
+            "Load Balancing",
+            "Connection Pooling"
+          ]
+        }
+      ]
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "layout_type": "cards",
+      "items": [
+        {
+          "title": "Healthcare Platform for SaMD",
+          "description": "Architected and built a cloud-native, regulatory-compliant SaMD platform for Huma Therapeutics, reducing development time by 50% and improving scalability.",
+          "technologies": [
+            "Python",
+            "Angular",
+            "Kubernetes",
+            "Cloud-Native",
+            "Microservices",
+            "Performance Monitoring"
+          ]
+        },
+        {
+          "title": "Microservices Migration",
+          "description": "Led a team that migrated a monolithic application to a microservices architecture, reducing deployment time by 40%. Implemented comprehensive performance monitoring with custom dashboards and alerting systems to ensure high availability. Established incident management protocols that reduced MTTR from 5 hours to under 60 minutes.",
+          "technologies": [
+            "Kubernetes",
+            "Docker",
+            "Azure",
+            "Java",
+            "Spring Boot",
+            "Spring Cloud",
+            "Microservices",
+            "API Gateway",
+            "OpenAPI",
+            "Kafka",
+            "RabbitMQ",
+            "Redis",
+            "MySQL",
+            "PostgreSQL",
+            "High Availability",
+            "Incident Management"
+          ]
+        },
+        {
+          "title": "IoT Platform for Telemetry Data",
+          "description": "Built a cloud-native, scalable IoT platform for a leading automotive manufacturer, enabling real-time data processing and analytics. Engineered a high-throughput system processing over 1M data points per minute with sophisticated caching strategies and load balancing to ensure consistent performance under peak loads.",
+          "technologies": [
+            "Java",
+            "Node.js",
+            "Spring Boot",
+            "Spring Cloud",
+            "Microservices",
+            "Kafka",
+            "RabbitMQ",
+            "Redis",
+            "MySQL",
+            "High-Throughput",
+            "Performance Optimization"
+          ]
+        },
+        {
+          "title": "Fintech Integration Platform",
+          "description": "Developed a secure platform integrating with financial services APIs including MorningHub, Morningstar, and other financial data providers. Implemented PCI DSS compliance and improved data retrieval speed by 30%.",
+          "technologies": ["Java", "Micronaut", "OAuth2", "Financial APIs"]
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "layout_type": "cards",
+      "items": [
+        {
+          "year": "2025",
+          "degree": "PGP in AI & Machine Learning",
+          "institution": "University of Texas at Austin",
+          "description": "Specialized in deep learning, computer vision, and natural language processing. Completed capstone project on healthcare predictive analytics."
+        },
+        {
+          "year": "2012",
+          "degree": "B.E. in Information Technology",
+          "institution": "JNTU Hyderabad",
+          "description": "Graduated with distinction. Final project on distributed systems earned university recognition."
+        }
+      ]
+    },
+    "certifications": {
+      "title": "Certifications & Professional Development",
+      "layout_type": "cards",
+      "items": [
+        {
+          "name": "MongoDB SI Associate",
+          "date": "October 2022",
+          "status_class": "completed",
+          "description": "Expertise in database design, optimization, and integration",
+          "icon": "fas fa-certificate"
+        },
+        {
+          "name": "Azure AZ-900",
+          "date": "June 2022",
+          "status_class": "completed",
+          "description": "Cloud fundamentals and Azure services certification",
+          "icon": "fas fa-certificate"
+        },
+        {
+          "name": "AWS Certified Solutions Architect",
+          "date": "In Progress",
+          "status_class": "in-progress",
+          "description": "Designing distributed systems on AWS infrastructure",
+          "icon": "fas fa-certificate"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Get In Touch",
+      "layout_type": "split",
+      "info": {
+        "title": "Contact Information",
+        "items": [
+          {
+            "icon": "fas fa-envelope",
+            "text": "hello@ankittater.com"
+          },
+          {
+            "icon": "fas fa-map-marker-alt",
+            "text": "London, United Kingdom"
+          },
+          {
+            "icon": "fab fa-linkedin",
+            "text": "linkedin.com/in/ankittater"
+          }
+        ]
+      },
+      "social": [
+        {
+          "url": "https://github.com/ankittater",
+          "icon": "fab fa-github"
+        },
+        {
+          "url": "https://linkedin.com/in/ankittater",
+          "icon": "fab fa-linkedin"
+        }
+      ],
+      "form": {
+        "title": "Send a Message",
+        "submit_text": "Send Message",
+        "fields": [
+          {
+            "type": "text",
+            "id": "contactName",
+            "name": "name",
+            "placeholder": "Your Name",
+            "required": true
+          },
+          {
+            "type": "email",
+            "id": "contactEmail",
+            "name": "email",
+            "placeholder": "Your Email",
+            "required": true
+          },
+          {
+            "type": "textarea",
+            "id": "contactMessage",
+            "name": "message",
+            "rows": 4,
+            "placeholder": "Your Message",
+            "required": true
+          }
+        ]
+      }
+    },
+    "footer": {
+      "copyright": "© 2025 Ankit Tater. All rights reserved.",
+      "tagline": "Engineering Management Professional"
+    }
+  },
+  "structured_data": {
+    "@context": "https://schema.org/",
+    "@type": "Person",
+    "name": "Ankit Tater",
+    "url": "https://ankittater.com",
+    "image": "https://ankittater.com/images/profile.jpg",
+    "jobTitle": "Engineering Manager",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Huma Therapeutics"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/ankittater",
+      "https://github.com/ankittater"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressCountry": "United Kingdom"
+    }
+  }
+}

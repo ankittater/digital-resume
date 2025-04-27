@@ -2,6 +2,13 @@ import { initializeVectorStore, similaritySearch } from "./vectorStore.js";
 import * as textSimilarity from "./textSimilarity.js";
 import * as deepseek from "./deepseek.js";
 import { DEFAULT_TOP_K } from "./config.js";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Get dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Track if the system is initialized
 let initialized = false;
@@ -9,17 +16,29 @@ let usingFallback = false;
 
 /**
  * Initialize the QA system by loading and processing the resume
- * @param {string} filePath - Path to the resume file
  * @returns {boolean} - Success status
  */
-export async function initializeQASystem(filePath) {
+export async function initializeQASystem() {
   try {
+    // Load resume data from JSON
+    const resumeDataPath = path.join(
+      __dirname,
+      "..",
+      "resources",
+      "resume-data.json"
+    );
+    const resumeData = JSON.parse(fs.readFileSync(resumeDataPath, "utf8"));
+
+    // Get the resume content from JSON
+    const resumeContent = resumeData.resume_content;
+    console.log("Using resume content from JSON file");
+
     // Try to initialize the vector store first
     try {
       console.log(
         "Trying to initialize vector store with Hugging Face embeddings..."
       );
-      const success = await initializeVectorStore(filePath);
+      const success = await initializeVectorStore(resumeContent);
 
       if (success) {
         initialized = true;
@@ -38,7 +57,7 @@ export async function initializeQASystem(filePath) {
     }
 
     // If Hugging Face fails, fall back to the text similarity system
-    const fallbackSuccess = await textSimilarity.initialize(filePath);
+    const fallbackSuccess = await textSimilarity.initialize(resumeContent);
 
     if (fallbackSuccess) {
       initialized = true;

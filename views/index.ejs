@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title><%= resumeData.site_config.meta.title %></title>
+    <meta name="title" content="<%= resumeData.site_config.meta.title %>" />
+    <meta name="description" content="<%= resumeData.site_config.meta.description %>" />
+    <meta name="keywords" content="<%= resumeData.site_config.meta.keywords %>" />
+    <meta name="author" content="<%= resumeData.site_config.meta.author %>" />
+    <meta name="robots" content="<%= resumeData.site_config.meta.robots %>" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="<%= resumeData.site_config.meta.og.type %>" />
+    <meta property="og:url" content="<%= resumeData.site_config.meta.og.url %>" />
+    <meta property="og:title" content="<%= resumeData.site_config.meta.og.title %>" />
+    <meta property="og:description" content="<%= resumeData.site_config.meta.og.description %>" />
+    <meta property="og:image" content="<%= resumeData.site_config.meta.og.image %>" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="<%= resumeData.site_config.meta.twitter.card %>" />
+    <meta property="twitter:url" content="<%= resumeData.site_config.meta.twitter.url %>" />
+    <meta property="twitter:title" content="<%= resumeData.site_config.meta.twitter.title %>" />
+    <meta property="twitter:description" content="<%= resumeData.site_config.meta.twitter.description %>" />
+    <meta property="twitter:image" content="<%= resumeData.site_config.meta.twitter.image %>" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<%= resumeData.site_config.meta.url %>" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="<%= resumeData.site_config.meta.favicon.default %>" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= resumeData.site_config.meta.favicon.png32 %>" />
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= resumeData.site_config.meta.favicon.png16 %>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= resumeData.site_config.meta.favicon.apple %>" />
+
+    <!-- CSS -->
+    <% resumeData.site_config.styles.external.forEach(function(style) { %>
+      <link rel="stylesheet" href="<%= style %>" />
+    <% }); %>
+    <% resumeData.site_config.styles.local.forEach(function(style) { %>
+      <link rel="stylesheet" href="<%= style %>" />
+    <% }); %>
+
+    <!-- Custom Theme CSS -->
+    <style>
+      :root {
+        --primary-color: <%= resumeData.site_config.theme.primary_color %>;
+        --secondary-color: <%= resumeData.site_config.theme.secondary_color %>;
+        --background-color: <%= resumeData.site_config.theme.background_color %>;
+        --text-color: <%= resumeData.site_config.theme.text_color %>;
+      }
+    </style>
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+      <%- JSON.stringify(resumeData.structured_data) %>
+    </script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#"><%= resumeData.layout.navigation.brand %></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <% resumeData.layout.navigation.links.forEach(function(link) { %>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= link.url %>"><%= link.text %></a>
+              </li>
+            <% }); %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Dynamic Sections Based on Order -->
+    <% 
+      // Get sections in order
+      const orderedSections = Object.entries(resumeData.layout.sections)
+        .filter(([_, section]) => section.enabled)
+        .sort((a, b) => a[1].order - b[1].order)
+        .map(([key]) => key);
+    %>
+
+    <% 
+      // Render Hero Section (Special Case)
+      if (resumeData.layout.sections.hero && resumeData.layout.sections.hero.enabled) { 
+    %>
+    <!-- Hero Section -->
+    <header class="hero-section py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <h1 class="display-4 fw-bold mb-3">
+              <%= resumeData.content.hero.title %>
+            </h1>
+            <p class="lead mb-4">
+              <%= resumeData.content.hero.subtitle %>
+            </p>
+            <div class="d-flex gap-3">
+              <% resumeData.content.hero.buttons.forEach(function(button) { %>
+                <a href="<%= button.url %>" class="<%= button.class %>"><%= button.text %></a>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <% } %>
+
+    <div class="container my-5">
+      <% 
+        // Render About Section (Special Case with Q&A)
+        if (resumeData.layout.sections.about && resumeData.layout.sections.about.enabled) { 
+      %>
+      <!-- About Section -->
+      <section id="about" class="mb-5">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="profile-section">
+              <div class="row mb-4">
+                <div class="col-md-12">
+                  <h1 class="profile-name"><%= resumeData.content.personal.name %></h1>
+                  <div class="profile-headline">
+                    <%= resumeData.content.personal.headline %>
+                  </div>
+                  <div class="profile-location mb-3">
+                    <i class="<%= resumeData.content.personal.location_icon %>"></i> <%= resumeData.content.personal.location %>
+                  </div>
+                  <div class="contact-info">
+                    <% resumeData.content.personal.contacts.forEach(function(contact) { %>
+                      <a href="<%= contact.value %>" <% if(contact.type !== 'email') { %>target="_blank"<% } %> class="contact-item">
+                        <i class="<%= contact.icon %>"></i> <%= contact.type.charAt(0).toUpperCase() + contact.type.slice(1) %>
+                      </a>
+                    <% }); %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="about-content">
+                    <h2 class="section-title"><%= resumeData.content.about.title %></h2>
+                    <% resumeData.content.about.summary.forEach(function(paragraph) { %>
+                      <p><%= paragraph %></p>
+                    <% }); %>
+                    <h3 class="subsection-title"><%= resumeData.content.about.expertise_title %></h3>
+                    <div class="expertise-grid">
+                      <% resumeData.content.about.expertise.forEach(function(expertise) { %>
+                        <div class="expertise-item">
+                          <i class="<%= expertise.icon %>"></i>
+                          <span><%= expertise.name %></span>
+                        </div>
+                      <% }); %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q&A Section -->
+          <div class="col-md-4">
+            <div class="qa-section">
+              <h2 class="text-center mb-4"><%= resumeData.content.qa.title %></h2>
+              <div class="mb-4">
+                <label for="question" class="form-label"><%= resumeData.content.qa.instruction %></label>
+                <textarea
+                  class="form-control"
+                  id="question"
+                  rows="3"
+                  placeholder="<%= resumeData.content.qa.placeholder %>"
+                ></textarea>
+              </div>
+              <button
+                onclick="askQuestion()"
+                class="btn btn-primary"
+                id="ask-button"
+              >
+                <%= resumeData.content.qa.button_text %>
+              </button>
+
+              <div class="loader" id="loader"></div>
+
+              <div class="mt-4" id="answer-section" style="display: none">
+                <h5><%= resumeData.content.qa.answer_label %>:</h5>
+                <div
+                  id="answer"
+                  class="p-3 bg-light rounded answer-content"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <% } %>
+
+      <% 
+        // Render Engineering Excellence Section
+        if (resumeData.layout.sections.engineering_excellence && resumeData.layout.sections.engineering_excellence.enabled) { 
+      %>
+      <!-- Engineering Excellence Section -->
+      <section id="engineering-excellence" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4"><%= resumeData.content.engineering_excellence.title %></h2>
+
+          <div class="row mb-4">
+            <% resumeData.content.engineering_excellence.sections.forEach(function(section) { %>
+              <% if (section.type === 'philosophy') { %>
+                <div class="col-md-12">
+                  <div class="metrics-card">
+                    <h3 class="metrics-title"><%= section.title %></h3>
+                    <div class="philosophy-content">
+                      <p><%= section.intro %></p>
+                      <div class="philosophy-grid">
+                        <% section.principles.forEach(function(principle) { %>
+                          <div class="philosophy-item">
+                            <div class="philosophy-icon">
+                              <i class="<%= principle.icon %>"></i>
+                            </div>
+                            <div class="philosophy-text">
+                              <strong><%= principle.name %></strong> - <%= principle.description %>
+                            </div>
+                          </div>
+                        <% }); %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% } %>
+            <% }); %>
+          </div>
+
+          <div class="row mb-4">
+            <% resumeData.content.engineering_excellence.sections.forEach(function(section) { %>
+              <% if (section.type === 'metrics') { %>
+                <div class="col-lg-6 mb-4">
+                  <div class="metrics-card">
+                    <h3 class="metrics-title"><%= section.title %></h3>
+                    <p class="mb-3"><%= section.intro %></p>
+                    <div class="metrics-grid">
+                      <% section.items.forEach(function(metric) { %>
+                        <div class="metric-item">
+                          <div class="metric-name"><%= metric.name %></div>
+                          <div class="metric-value"><%= metric.value %></div>
+                          <div class="metric-improvement"><%= metric.improvement %></div>
+                        </div>
+                      <% }); %>
+                    </div>
+                  </div>
+                </div>
+              <% } %>
+              <% if (section.type === 'okr') { %>
+                <div class="col-lg-6 mb-4">
+                  <div class="metrics-card">
+                    <h3 class="metrics-title"><%= section.title %></h3>
+                    <p class="mb-3"><%= section.intro %></p>
+                    <div class="okr-list">
+                      <% section.items.forEach(function(item) { %>
+                        <div class="okr-item">
+                          <div class="okr-icon"><i class="<%= item.icon %>"></i></div>
+                          <div class="okr-content">
+                            <h4><%= item.title %></h4>
+                            <p><%= item.description %></p>
+                          </div>
+                        </div>
+                      <% }); %>
+                    </div>
+                  </div>
+                </div>
+              <% } %>
+            <% }); %>
+          </div>
+        </div>
+      </section>
+      <% } %>
+
+      <% 
+        // Render Experience Section
+        if (resumeData.layout.sections.experience && resumeData.layout.sections.experience.enabled) { 
+      %>
+      <!-- Experience Section -->
+      <section id="experience" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4"><%= resumeData.content.experience.title %></h2>
+
+          <% if (resumeData.content.experience.layout_type === 'timeline') { %>
+            <div class="timeline">
+              <% resumeData.content.experience.items.forEach(function(job) { %>
+                <div class="timeline-item">
+                  <div class="timeline-badge">
+                    <i class="<%= job.icon %>"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h4><%= job.position %></h4>
+                    <h5><%= job.company %>, <%= job.location %></h5>
+                    <p class="text-muted"><%= job.period %></p>
+                    <ul>
+                      <% job.responsibilities.forEach(function(responsibility) { %>
+                        <li><%= responsibility %></li>
+                      <% }); %>
+                    </ul>
+                  </div>
+                </div>
+              <% }); %>
+            </div>
+          <% } else if (resumeData.content.experience.layout_type === 'cards') { %>
+            <div class="row">
+              <% resumeData.content.experience.items.forEach(function(job) { %>
+                <div class="col-md-6 mb-4">
+                  <div class="card experience-card">
+                    <div class="card-body">
+                      <h4><%= job.position %></h4>
+                      <h5><%= job.company %>, <%= job.location %></h5>
+                      <p class="text-muted"><%= job.period %></p>
+                      <ul>
+                        <% job.responsibilities.forEach(function(responsibility) { %>
+                          <li><%= responsibility %></li>
+                        <% }); %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              <% }); %>
+            </div>
+          <% } %>
+        </div>
+      </section>
+      <% } %>
+
+      <% 
+        // Render Skills Section
+        if (resumeData.layout.sections.skills && resumeData.layout.sections.skills.enabled) { 
+      %>
+      <!-- Skills Section -->
+      <section id="skills" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4"><%= resumeData.content.skills.title %></h2>
+
+          <div class="row">
+            <% resumeData.content.skills.categories.forEach(function(category) { %>
+              <div class="col-md-6 mb-4">
+                <div class="skill-category">
+                  <h4><i class="<%= category.icon %>"></i> <%= category.name %></h4>
+                  <div class="skill-tags">
+                    <% category.skills.forEach(function(skill) { %>
+                      <span class="skill-tag"><%= skill %></span>
+                    <% }); %>
+                  </div>
+                </div>
+              </div>
+            <% }); %>
+          </div>
+        </div>
+      </section>
+      <% } %>
+
+      <% 
+        // Render Projects Section
+        if (resumeData.layout.sections.projects && resumeData.layout.sections.projects.enabled) { 
+      %>
+      <!-- Projects Section -->
+      <section id="projects" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4"><%= resumeData.content.projects.title %></h2>
+
+          <div class="row">
+            <% resumeData.content.projects.items.forEach(function(project) { %>
+              <div class="col-md-6 mb-4">
+                <div class="project-card">
+                  <h4><%= project.title %></h4>
+                  <p><%= project.description %></p>
+                  <div class="project-tags">
+                    <% project.technologies.forEach(function(tech) { %>
+                      <span class="project-tag"><%= tech %></span>
+                    <% }); %>
+                  </div>
+                </div>
+              </div>
+            <% }); %>
+          </div>
+        </div>
+      </section>
+      <% } %>
+
+      <% 
+        // Render Education Section
+        if (resumeData.layout.sections.education && resumeData.layout.sections.education.enabled) { 
+      %>
+      <!-- Education Section -->
+      <section id="education" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4"><%= resumeData.content.education.title %></h2>
+
+          <div class="row">
+            <% resumeData.content.education.items.forEach(function(edu) { %>
+              <div class="col-md-6 mb-4">
+                <div class="education-card">
+                  <div class="education-year"><%= edu.year %></div>
+                  <h4 class="education-degree"><%= edu.degree %></h4>
+                  <div class="education-school"><%= edu.institution %></div>
+                  <p class="education-details"><%= edu.description %></p>
+                </div>
+              </div>
+            <% }); %>
+          </div>
+        </div>
+      </section>
+      <% } %>
+
+      <% 
+        // Render Certifications Section
+        if (resumeData.layout.sections.certifications && resumeData.layout.sections.certifications.enabled) { 
+      %>
+      <!-- Certifications Section -->
+      <section id="certifications" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4"><%= resumeData.content.certifications.title %></h2>
+
+          <div class="row">
+            <% resumeData.content.certifications.items.forEach(function(cert) { %>
+              <div class="col-md-4 mb-4">
+                <div class="certification-card">
+                  <div class="certification-badge">
+                    <i class="<%= cert.icon %>"></i>
+                  </div>
+                  <div class="certification-details">
+                    <h4><%= cert.name %></h4>
+                    <span class="certification-status <%= cert.status_class %>"><%= cert.date %></span>
+                    <span class="certification-description"><%= cert.description %></span>
+                  </div>
+                </div>
+              </div>
+            <% }); %>
+          </div>
+        </div>
+      </section>
+      <% } %>
+
+      <% 
+        // Render Contact Section
+        if (resumeData.layout.sections.contact && resumeData.layout.sections.contact.enabled) { 
+      %>
+      <!-- Contact Section -->
+      <section id="contact" class="mb-5">
+        <div class="section-container">
+          <h2 class="section-header mb-4"><%= resumeData.content.contact.title %></h2>
+
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="contact-info-card">
+                <h4><%= resumeData.content.contact.info.title %></h4>
+                <ul class="contact-list">
+                  <% resumeData.content.contact.info.items.forEach(function(item) { %>
+                    <li><i class="<%= item.icon %>"></i> <%= item.text %></li>
+                  <% }); %>
+                </ul>
+                <div class="social-icons mt-4">
+                  <% resumeData.content.contact.social.forEach(function(social) { %>
+                    <a href="<%= social.url %>" target="_blank" class="social-icon"><i class="<%= social.icon %>"></i></a>
+                  <% }); %>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="contact-form-card">
+                <h4><%= resumeData.content.contact.form.title %></h4>
+                <form id="contactForm">
+                  <% resumeData.content.contact.form.fields.forEach(function(field) { %>
+                    <div class="mb-3">
+                      <% if (field.type === 'textarea') { %>
+                        <textarea
+                          class="form-control"
+                          id="<%= field.id %>"
+                          name="<%= field.name %>"
+                          rows="<%= field.rows %>"
+                          placeholder="<%= field.placeholder %>"
+                          <% if (field.required) { %>required<% } %>
+                        ></textarea>
+                      <% } else { %>
+                        <input
+                          type="<%= field.type %>"
+                          class="form-control"
+                          id="<%= field.id %>"
+                          name="<%= field.name %>"
+                          placeholder="<%= field.placeholder %>"
+                          <% if (field.required) { %>required<% } %>
+                        />
+                      <% } %>
+                    </div>
+                  <% }); %>
+                  <button
+                    type="submit"
+                    id="submitContact"
+                    class="btn btn-primary"
+                  >
+                    <%= resumeData.content.contact.form.submit_text %>
+                  </button>
+                  <div
+                    id="contactFormStatus"
+                    class="mt-3"
+                    style="display: none"
+                  ></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <% } %>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer py-4 bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0"><%= resumeData.content.footer.copyright %></p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="mb-0"><%= resumeData.content.footer.tagline %></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      async function askQuestion() {
+        const question = document.getElementById("question").value;
+        if (!question) return;
+
+        // Show loader and disable button
+        const loader = document.getElementById("loader");
+        const askButton = document.getElementById("ask-button");
+        const answerSection = document.getElementById("answer-section");
+        const answerElement = document.getElementById("answer");
+
+        loader.style.display = "block";
+        askButton.disabled = true;
+        answerSection.style.display = "none";
+
+        try {
+          const response = await fetch("/ask", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ question }),
+          });
+
+          const data = await response.json();
+
+          // Format and display the answer
+          answerSection.style.display = "block";
+          answerElement.innerHTML = formatAnswer(data.answer);
+
+          // Hide loader and enable button
+          loader.style.display = "none";
+          askButton.disabled = false;
+        } catch (error) {
+          console.error("Error:", error);
+          alert("An error occurred while processing your question.");
+          loader.style.display = "none";
+          askButton.disabled = false;
+        }
+      }
+
+      function formatAnswer(answer) {
+        // Convert line breaks to paragraphs and handle basic formatting
+        return answer
+          .split("\n\n")
+          .map((paragraph) => {
+            if (paragraph.trim().startsWith("•")) {
+              // Convert bullet points to unordered list
+              const items = paragraph.split("•").filter((item) => item.trim());
+              return `<ul>${items
+                .map((item) => `<li>${item.trim()}</li>`)
+                .join("")}</ul>`;
+            }
+            return `<p>${paragraph}</p>`;
+          })
+          .join("");
+      }
+
+      // Handle contact form submission
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const name = document.getElementById("contactName").value;
+          const email = document.getElementById("contactEmail").value;
+          const message = document.getElementById("contactMessage").value;
+
+          // Get UI elements
+          const submitButton = document.getElementById("submitContact");
+          const statusDiv = document.getElementById("contactFormStatus");
+
+          // Disable button and show processing status
+          submitButton.disabled = true;
+          statusDiv.innerHTML =
+            '<div class="alert alert-info">Sending your message...</div>';
+          statusDiv.style.display = "block";
+
+          try {
+            const response = await fetch("/contact", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ name, email, message }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+              // Show success message
+              statusDiv.innerHTML =
+                '<div class="alert alert-success">Your message has been sent successfully!</div>';
+              // Reset form
+              document.getElementById("contactForm").reset();
+            } else {
+              // Show error message
+              statusDiv.innerHTML = `<div class="alert alert-danger">${
+                data.error || "Something went wrong. Please try again."
+              }</div>`;
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            statusDiv.innerHTML =
+              '<div class="alert alert-danger">Failed to send message. Please try again later.</div>';
+          } finally {
+            // Re-enable button
+            submitButton.disabled = false;
+
+            // Automatically hide the status message after 5 seconds on success
+            if (statusDiv.querySelector(".alert-success")) {
+              setTimeout(() => {
+                statusDiv.style.display = "none";
+              }, 5000);
+            }
+          }
+        });
+    </script>
+    <% resumeData.site_config.scripts.forEach(function(script) { %>
+      <script src="<%= script %>"></script>
+    <% }); %>
+  </body>
+</html>

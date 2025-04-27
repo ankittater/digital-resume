@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
+import fs from "fs";
 import { initializeQASystem, askQuestion } from "./utils/qaSystem.js";
 import { sendContactEmail } from "./utils/emailService.js";
 
@@ -19,9 +20,20 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// Initialize the QA system with vector embeddings
+// Load resume data from JSON file
+const loadResumeData = () => {
+  try {
+    const resumeDataPath = path.join(__dirname, "config", "resume-data.json");
+    const resumeData = JSON.parse(fs.readFileSync(resumeDataPath, "utf8"));
+    return resumeData;
+  } catch (error) {
+    console.error("Error loading resume data from JSON:", error);
+    return {};
+  }
+};
+
+// Initialize the QA system
 console.log("Initializing QA System...");
-const resumePath = path.join(__dirname, "resources", "cv.md");
 
 // Start server first, then initialize the QA system
 const PORT = process.env.PORT || 9000;
@@ -32,7 +44,7 @@ const server = app.listen(PORT, () => {
   );
 
   // Initialize QA system after server starts
-  initializeQASystem(resumePath)
+  initializeQASystem()
     .then((success) => {
       if (!success) {
         console.warn(
@@ -49,7 +61,9 @@ const server = app.listen(PORT, () => {
 
 // Routes
 app.get("/", (req, res) => {
-  res.render("index");
+  // Load resume data and pass it to the template
+  const resumeData = loadResumeData();
+  res.render("index", { resumeData });
 });
 
 app.post("/ask", async (req, res) => {
@@ -116,3 +130,15 @@ app.post("/contact", async (req, res) => {
     });
   }
 });
+
+// Handle graceful shutdown
+process.on("SIGTERM", gracefulShutdown);
+process.on("SIGINT", gracefulShutdown);
+
+function gracefulShutdown() {
+  console.log("Shutting down gracefully...");
+  server.close(() => {
+    console.log("Server closed");
+    process.exit(0);
+  });
+}
