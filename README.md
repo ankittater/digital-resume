@@ -10,6 +10,10 @@ This is a web application that uses JSON data to create a personal portfolio web
 - **Local Vector Search**: Uses Transformers.js for local vector embeddings without external APIs
 - **Fallback System**: Text similarity search when vector search isn't available
 
+## Demo
+
+Check out a live implementation of this system at [Ankit Tater's Portfolio](http://ankittater.com/). This demo showcases how the JSON Resume RAG System can be used to create a professional portfolio with an interactive Q&A feature.
+
 ## Prerequisites
 
 - Node.js (v14 or higher)
@@ -44,6 +48,26 @@ This is a web application that uses JSON data to create a personal portfolio web
 2. Open your browser and navigate to `http://localhost:9000`
 3. Browse your portfolio or ask questions in the Q&A section
 4. Click "Ask" to get answers based on your resume content
+
+## Docker
+
+You can also run this application using Docker:
+
+```bash
+# Build the Docker image
+docker build -t digital-resume .
+
+# Run the container
+docker run -p 9000:9000 -d digital-resume
+
+# Run with environment variables (e.g., DeepSeek API key)
+docker run -p 9000:9000 -e DEEPSEEK_API_KEY=your_key_here -d digital-resume
+
+# Using Docker Compose
+docker-compose up -d
+```
+
+Access your application at `http://localhost:9000` after running with Docker.
 
 ## Resume Data Structure
 

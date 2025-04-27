@@ -1,7 +1,7 @@
 import { initializeVectorStore, similaritySearch } from "./vectorStore.js";
 import * as textSimilarity from "./textSimilarity.js";
 import * as deepseek from "./deepseek.js";
-import { DEFAULT_TOP_K } from "./config.js";
+import { DEFAULT_TOP_K, RESUME_DATA_PATH } from "./config.js";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -21,13 +21,7 @@ let usingFallback = false;
 export async function initializeQASystem() {
   try {
     // Load resume data from JSON
-    const resumeDataPath = path.join(
-      __dirname,
-      "..",
-      "resources",
-      "resume-data.json"
-    );
-    const resumeData = JSON.parse(fs.readFileSync(resumeDataPath, "utf8"));
+    const resumeData = JSON.parse(fs.readFileSync(RESUME_DATA_PATH, "utf8"));
 
     // Get the resume content from JSON
     const resumeContent = resumeData.resume_content;

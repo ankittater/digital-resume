@@ -2,10 +2,12 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { pipeline } from "@xenova/transformers";
 import dotenv from "dotenv";
+import fs from "fs";
 import {
   EMBEDDING_MODEL,
   DEFAULT_TOP_K,
   MIN_SIMILARITY_SCORE,
+  RESUME_DATA_PATH
 } from "./config.js";
 
 // Load environment variables
@@ -46,11 +48,98 @@ async function getEmbedding(text) {
 
 /**
  * Initialize the vector store with the resume content
- * @param {string} resumeContent - Resume content as text (can be content from file or JSON)
+ * @param {string} resumeContent - Resume content as text (optional, if not provided, will load from config file)
  */
-export async function initializeVectorStore(resumeContent) {
+export async function initializeVectorStore(resumeContent = null) {
   try {
     console.log("Initializing vector store with local embeddings model...");
+    
+    // If no resume content is provided, load it from the config file
+    if (!resumeContent) {
+      try {
+        console.log("Loading resume data from config file...");
+        const resumeData = JSON.parse(fs.readFileSync(RESUME_DATA_PATH, "utf8"));
+        
+        // If there's no resume_content field in the JSON, create it from the structured data
+        if (!resumeData.resume_content) {
+          console.log("Creating resume_content from structured data...");
+          // Create a structured text representation of the resume data
+          const contentSections = [];
+          
+          // Add personal information
+          contentSections.push(`# Personal\n${resumeData.content.personal.name}\n${resumeData.content.personal.headline}\n${resumeData.content.personal.location}`);
+          
+          // Add about section
+          if (resumeData.content.about) {
+            contentSections.push(`# About\n${resumeData.content.about.summary.join('\n\n')}`);
+          }
+          
+          // Add experience section
+          if (resumeData.content.experience) {
+            const experienceText = resumeData.content.experience.items.map(job => 
+              `${job.position} at ${job.company} (${job.period})\n${job.responsibilities.join('\n')}`
+            ).join('\n\n');
+            contentSections.push(`# Experience\n${experienceText}`);
+          }
+          
+          // Add skills section
+          if (resumeData.content.skills) {
+            const skillsText = resumeData.content.skills.categories.map(category => 
+              `${category.name}: ${category.skills.join(', ')}`
+            ).join('\n\n');
+            contentSections.push(`# Skills\n${skillsText}`);
+          }
+          
+          // Add projects section
+          if (resumeData.content.projects) {
+            const projectsText = resumeData.content.projects.items.map(project => 
+              `${project.title}\n${project.description}\nTechnologies: ${project.technologies.join(', ')}`
+            ).join('\n\n');
+            contentSections.push(`# Projects\n${projectsText}`);
+          }
+          
+          // Add education section
+          if (resumeData.content.education) {
+            const educationText = resumeData.content.education.items.map(edu => 
+              `${edu.degree} from ${edu.institution} (${edu.year})\n${edu.description}`
+            ).join('\n\n');
+            contentSections.push(`# Education\n${educationText}`);
+          }
+          
+          // Add certifications section
+          if (resumeData.content.certifications) {
+            const certificationsText = resumeData.content.certifications.items.map(cert => 
+              `${cert.name} (${cert.date})\n${cert.description}`
+            ).join('\n\n');
+            contentSections.push(`# Certifications\n${certificationsText}`);
+          }
+          
+          // Add engineering excellence section
+          if (resumeData.content.engineering_excellence) {
+            const excellenceText = resumeData.content.engineering_excellence.sections.map(section => 
+              `${section.title}\n${section.intro}`
+            ).join('\n\n');
+            contentSections.push(`# Engineering Excellence\n${excellenceText}`);
+          }
+          
+          resumeContent = contentSections.join('\n\n');
+          
+          // Store the created content back in the resumeData object
+          resumeData.resume_content = resumeContent;
+          
+          // Save the updated resumeData back to the file to avoid regenerating next time
+          fs.writeFileSync(RESUME_DATA_PATH, JSON.stringify(resumeData, null, 2), "utf8");
+          console.log("Updated resume_content in config file");
+        } else {
+          // Use the existing resume_content field
+          resumeContent = resumeData.resume_content;
+          console.log("Using existing resume_content from config file");
+        }
+      } catch (error) {
+        console.error("Error loading resume data from config file:", error);
+        throw new Error("Failed to load resume data from config file");
+      }
+    }
 
     // Initialize the feature extractor
     await initializeFeatureExtractor();

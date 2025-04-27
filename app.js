@@ -5,6 +5,8 @@ import { fileURLToPath } from "url";
 import fs from "fs";
 import { initializeQASystem, askQuestion } from "./utils/qaSystem.js";
 import { sendContactEmail } from "./utils/emailService.js";
+import { RESUME_DATA_PATH } from "./utils/config.js";
+import { synchronizeResumeData } from "./utils/fileSyncUtils.js";
 
 // Configure environment variables
 dotenv.config();
@@ -23,8 +25,7 @@ app.set("views", path.join(__dirname, "views"));
 // Load resume data from JSON file
 const loadResumeData = () => {
   try {
-    const resumeDataPath = path.join(__dirname, "config", "resume-data.json");
-    const resumeData = JSON.parse(fs.readFileSync(resumeDataPath, "utf8"));
+    const resumeData = JSON.parse(fs.readFileSync(RESUME_DATA_PATH, "utf8"));
     return resumeData;
   } catch (error) {
     console.error("Error loading resume data from JSON:", error);
@@ -37,13 +38,17 @@ console.log("Initializing QA System...");
 
 // Start server first, then initialize the QA system
 const PORT = process.env.PORT || 9000;
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, async () => {
   console.log(`Server is running on port ${PORT}`);
   console.log(
     `Visit http://localhost:${PORT} to ask questions about the resume`
   );
 
-  // Initialize QA system after server starts
+  // First synchronize resume data files
+  console.log("Ensuring resume data files are in sync...");
+  await synchronizeResumeData();
+  
+  // Then initialize QA system
   initializeQASystem()
     .then((success) => {
       if (!success) {

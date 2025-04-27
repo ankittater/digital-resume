@@ -19,4 +19,11 @@ export const MIN_SIMILARITY_SCORE = 0.1;
 // Text similarity specific
 export const TEXT_MIN_SIMILARITY_SCORE = 0.1;
 
+// Resume data path
+import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+export const RESUME_DATA_PATH = path.join(__dirname, "..", "config", "resume-data.json");
+
 // Other configuration constants can be added here

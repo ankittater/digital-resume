@@ -1,0 +1,16 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules",
+    "public",
+    "*.json",
+    "**/*.log",
+    "**/*.temp"
+  ],
+  "watch": [
+    "app.js",
+    "utils",
+    "views"
+  ],
+  "ext": "js,mjs,json,ejs"
+}
