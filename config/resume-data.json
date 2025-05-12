@@ -181,19 +181,35 @@
       "expertise_title": "Areas of Expertise",
       "expertise": [
         {
-          "name": "Team Leadership",
-          "icon": "fas fa-users"
+          "name": "Healthtech Innovation",
+          "icon": "fas fa-heartbeat"
         },
         {
-          "name": "AI/ML Engineering",
+          "name": "Regulatory Compliance (SaMD/MDR/HIPAA)",
+          "icon": "fas fa-shield-alt"
+        },
+        {
+          "name": "Healthcare Data Architecture",
+          "icon": "fas fa-hospital-user"
+        },
+        {
+          "name": "AI/ML in Clinical Applications",
           "icon": "fas fa-brain"
         },
         {
-          "name": "Cloud Architecture",
-          "icon": "fas fa-cloud"
+          "name": "High-Performance Engineering",
+          "icon": "fas fa-tachometer-alt"
         },
         {
-          "name": "Digital Transformation",
+          "name": "Cloud Security & Compliance",
+          "icon": "fas fa-lock"
+        },
+        {
+          "name": "Technical Leadership",
+          "icon": "fas fa-users-cog"
+        },
+        {
+          "name": "Digital Health Transformation",
           "icon": "fas fa-sync-alt"
         }
       ]
@@ -213,28 +229,38 @@
           "type": "philosophy",
           "title": "Engineering Leadership Philosophy",
           "intro": "My approach to engineering leadership is built on creating systems and processes that empower teams to deliver exceptional results while maintaining technical excellence.",
-          "principles": [
+            "principles": [
             {
-              "name": "Technical Excellence",
-              "description": "Establishing strong engineering practices including CI/CD, testing, and code quality standards",
-              "icon": "fas fa-code"
+              "name": "Technical Vision & Strategy",
+              "description": "Setting clear technical direction and standards while balancing innovation with stability and scalability",
+              "icon": "fas fa-compass"
             },
             {
-              "name": "Team Empowerment",
-              "description": "Creating autonomous teams with the tools and authority to make decisions",
+              "name": "People Leadership & Development",
+              "description": "Cultivating talent through mentorship, career growth opportunities, and creating psychological safety",
               "icon": "fas fa-users-cog"
             },
             {
-              "name": "Data-Driven Decision Making",
-              "description": "Using metrics and customer feedback to guide technical decisions",
+              "name": "Data-Driven Leadership",
+              "description": "Making strategic decisions based on metrics, establishing KPIs that align engineering outcomes with business goals",
               "icon": "fas fa-chart-line"
             },
             {
-              "name": "Continuous Improvement",
-              "description": "Regular retrospectives and process optimization to continuously evolve",
+              "name": "Adaptive Management",
+              "description": "Evolving leadership approaches based on team maturity, business context, and organizational needs",
               "icon": "fas fa-sync-alt"
+            },
+            {
+              "name": "Building High-Performance Culture",
+              "description": "Fostering excellence through clear expectations, accountability, and recognition of achievements",
+              "icon": "fas fa-trophy"
+            },
+            {
+              "name": "Business-Technology Alignment",
+              "description": "Translating business requirements into technical solutions while managing stakeholder expectations",
+              "icon": "fas fa-handshake"
             }
-          ]
+            ]
         },
         {
           "id": "metrics",
