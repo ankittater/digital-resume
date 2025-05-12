@@ -215,7 +215,23 @@
       ]
     },
     "qa": {
-      "title": "Ask anything about Me",
+      "title": "Ask Me About My Experience",
+      "description": "Have questions about my skills, projects, or expertise? Use this interactive tool to get instant answers about my professional background.",
+      "faq_title": "FAQ",
+      "faq": [
+        {
+          "question": "What are your core technical skills?",
+          "answer": "My core technical skills include Java, Python, Cloud Architecture (AWS/Azure), AI/ML technologies, and building high-performance distributed systems."
+        },
+        {
+          "question": "How do you approach engineering leadership?",
+          "answer": "I focus on data-driven decision making, establishing clear technical vision, fostering engineering excellence through measurable metrics (DORA), and prioritizing team development and psychological safety."
+        },
+        {
+          "question": "What experience do you have with healthcare systems?",
+          "answer": "I've led development of regulatory-compliant SaMD (Software as Medical Device) platforms, implemented healthcare data architectures following HIPAA guidelines, and built AI-powered clinical applications."
+        }
+      ],
       "instruction": "Ask a question about my skills, experience, projects, etc:",
       "placeholder": "e.g., What are Ankit's skills? What is Ankit's experience?",
       "button_text": "Ask",

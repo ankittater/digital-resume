@@ -154,6 +154,33 @@
         max-width: 100%;
         height: auto;
       }
+      
+      /* FAQ Styles */
+      .faq-list {
+        margin-bottom: 20px;
+      }
+      
+      .faq-item {
+        margin-bottom: 10px;
+      }
+      
+      .faq-question {
+        display: block;
+        padding: 8px 12px;
+        background-color: #f0f7ff;
+        border-radius: 6px;
+        color: #0056b3;
+        text-decoration: none;
+        transition: all 0.2s;
+        font-size: 14px;
+      }
+      
+      .faq-question:hover {
+        background-color: #e1efff;
+        transform: translateY(-1px);
+        color: #004494;
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
@@ -271,6 +298,7 @@
           <div class="col-md-4">
             <div class="qa-section">
               <h2 class="text-center mb-4"><%= resumeData.content.qa.title %></h2>
+              
               <div class="mb-4">
                 <label for="question" class="form-label"><%= resumeData.content.qa.instruction %></label>
                 <textarea
@@ -297,6 +325,23 @@
                   class="p-3 bg-light rounded answer-content markdown-content"
                 ></div>
               </div>
+              
+              <!-- FAQ Section -->
+              <% if (resumeData.content.qa.faq && resumeData.content.qa.faq.length > 0) { %>
+               
+                <div class="clearfix mb-4"></div>
+                <div class="mt-5 pt-3 border-top"></div>
+                <h5><%= resumeData.content.qa.faq_title || "FAQ" %></h5>
+                <div class="faq-list">
+                <% resumeData.content.qa.faq.forEach(function(faq) { %>
+                  <div class="faq-item">
+                  <a href="#" class="faq-question" onclick="selectQuestion('<%= faq.question %>'); return false;">
+                  <%= faq.question %>
+                  </a>
+                  </div>
+                <% }); %>
+                </div>
+              <% } %>
             </div>
           </div>
         </div>
@@ -677,6 +722,14 @@
       function formatAnswer(answer) {
         // Use marked.js to parse markdown
         return marked.parse(answer);
+      }
+
+      function selectQuestion(question) {
+        document.getElementById("question").value = question;
+        // Auto-click the ask button after selecting a question
+        setTimeout(() => {
+          document.getElementById("ask-button").click();
+        }, 100);
       }
 
       // Handle contact form submission
