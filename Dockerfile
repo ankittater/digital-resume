@@ -11,6 +11,7 @@ RUN npm install
 # Copy application code
 COPY . .
 
+
 # Debug: List files to verify contents
 RUN ls -la
 
